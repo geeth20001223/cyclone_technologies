@@ -1,56 +1,118 @@
-# Laravel E-Commerce Website
-A Computer Selling Wesbsite(E-Commerce) with Laravel 10.x
-## 🧰 Languages & Tools
+# ⚡ Cyclone Technologies — High Performance E-Commerce Platform
 
-<img src="https://github.com/devicons/devicon/blob/master/icons/laravel/laravel-plain-wordmark.svg" title="Laravel" alt="Laravel" width="70" height="70"/>&nbsp;
+[![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.x-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
+[![PostgreSQL](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com)
+[![Vercel](https://img.shields.io/badge/Vercel-Serverless-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
-## Features
+A modern, full-featured, **100% Mobile Responsive** e-commerce application built for selling gaming PCs, laptops, and tech peripherals. Powered by **Laravel 10**, custom glassmorphism design system, real-time messaging, and ready for deployment on **Vercel** & **Supabase**.
 
-- User & Admin Pages
-- User can signup for free
-- User Should verify his emil while signing up
-- User can add product to cart and delete them from cart
-- User can do the payment with both Payment by card or cash on delivery
-- User can update his/her email, password and delete his/her account
-- User can track his/her order by tracking id related to order and view the order delivery status
-- Admin can deactive, active and delete users
-- Admin can add, remove, update products
-- Admin can cancel and update the delivery status of each product
-- Admin can print the bill realted to each product
-- Much more features
+---
 
+## 🌟 Key Features
 
-## Screenshots
+### 📱 100% Mobile Responsive Architecture
+- Dynamic slide-out mobile drawer menu with touch navigation.
+- Responsive product grids, shop filters, account dashboard, and cart tables.
+- Fluid media scaling across all mobile devices, tablets, and desktop resolutions.
 
-<h3>Home Page of the Web</h3>
+### 🛒 E-Commerce & Customer Capabilities
+- **Product Shop & Filtering**: Browse by categories, search products, view specs, and filter items.
+- **Cart & Checkout**: Interactive cart management, order summaries, and coupon discounts.
+- **Multiple Payment Methods**: Support for Stripe API payments and Cash on Delivery (COD).
+- **Order Tracking**: Real-time order tracking ID system with status updates (`Processing`, `Packaging`, `Shipped`, `On the way`, `Delivered`).
+- **Customer Rewards System**: Earn and claim reward points on purchases.
 
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/homepage.png'>
+### 💬 Real-Time Buyer-Seller Chat
+- Integrated direct messaging interface between buyers and sellers with unread notification badges.
 
+### 📊 Admin Control Center
+- **Analytics Dashboard**: Interactive Chart.js data visualizations (Revenue, Total Customers, Product Sales, Active Orders).
+- **Inventory & Category Management**: Add, edit, delete products with multi-image/video support.
+- **Customer & Order Management**: View customer profiles, update delivery/payment statuses, and print invoices/bills.
 
-<h3>Shop Page of the Web</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/shop.png'>
+---
 
-<h3>Product Page of the Web</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/products.png'>
+## 📸 Application Screenshots
 
-<h3>Product Details Page of the Web</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/product-details.png'>
+### 💻 User Frontend Overview
+![Cyclone Technologies Homepage](./screenshots/homepage.png)
 
-<h3>User Cart Page of the Web</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/cart.png'>
+### 📊 Admin Dashboard & Analytics
+![Admin Dashboard](./screenshots/admin%20dashboard.png)
 
-<h3>Payment With Cart Page</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/payment.png'>
+---
 
-<h3>Payment with Strip API</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/stripe%20payment.png'>
+## 🧰 Tech Stack
 
-<h3>User Verify Email</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/verify%20email.png'>
+- **Backend Framework**: Laravel 10.x
+- **Language**: PHP 8.2+
+- **Frontend UI**: Blade Templating, HTML5, Custom CSS3 Design System, Bootstrap 5
+- **Database**: MySQL / PostgreSQL (Supabase Compatible)
+- **Charts & Animations**: Chart.js, SweetAlert, Slick Carousel
+- **Cloud Infrastructure**: Vercel Serverless PHP, Supabase Cloud PostgreSQL
 
-<h3>Admin Dashboard</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/admin%20dashboard.png'>
+---
 
-<h3>Add Product Page</h3>
-<img src='https://github.com/nazir20/Laravel-E-Commerce/blob/main/screenshots/add%20product.png'>
+## 🚀 Quick Setup & Installation
 
+### Prerequisites
+- PHP >= 8.1
+- Composer
+- MySQL or PostgreSQL Database
+
+### Installation Steps
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/geeth20001223/cyclone_technologies.git
+   cd cyclone_technologies
+   ```
+
+2. **Install Composer Dependencies**
+   ```bash
+   composer install
+   ```
+
+3. **Configure Environment Variables**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+4. **Set Up Database in `.env`**
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=ecommerce
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+5. **Run Migrations & Seeders**
+   ```bash
+   php artisan migrate
+   ```
+
+6. **Start Local Server**
+   ```bash
+   php artisan serve
+   ```
+   Open your browser at `http://127.0.0.1:8000`.
+
+---
+
+## ☁️ Deployment (Vercel + Supabase)
+
+This repository includes pre-configured deployment files for **Vercel**:
+- `vercel.json` (Vercel routes & static asset handling)
+- `api/index.php` (Serverless PHP entrypoint)
+- `supabase_import.sql` (PostgreSQL database import script)
+
+---
+
+## 📜 License
+
+This project is open-source software licensed under the MIT license.
