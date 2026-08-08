@@ -27,17 +27,31 @@ $_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
 
 define('LARAVEL_START', microtime(true));
 
-require __DIR__ . '/../vendor/autoload.php';
+try {
+    if (!file_exists(__DIR__ . '/../vendor/autoload.php')) {
+        throw new Exception("vendor/autoload.php not found. Composer dependencies missing.");
+    }
 
-$app = require_once __DIR__ . '/../bootstrap/app.php';
+    require __DIR__ . '/../vendor/autoload.php';
 
-// Set storage path to writable /tmp directory on Vercel
-$app->useStoragePath('/tmp/storage');
+    $app = require_once __DIR__ . '/../bootstrap/app.php';
 
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+    // Set storage path to writable /tmp directory on Vercel
+    $app->useStoragePath('/tmp/storage');
 
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-)->send();
+    $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
-$kernel->terminate($request, $response);
+    $response = $kernel->handle(
+        $request = Illuminate\Http\Request::capture()
+    )->send();
+
+    $kernel->terminate($request, $response);
+} catch (\Throwable $e) {
+    http_response_code(500);
+    echo "<div style='padding:30px; font-family:sans-serif; background:#0f172a; color:#f8fafc; min-height:100vh;'>";
+    echo "<h2 style='color:#ef4444;'>⚡ Vercel Deployment Error Diagnostic</h2>";
+    echo "<p style='font-size:16px;'><strong>Error:</strong> " . htmlspecialchars($e->getMessage()) . "</p>";
+    echo "<p style='font-size:14px; color:#cbd5e1;'><strong>File:</strong> " . htmlspecialchars($e->getFile()) . " : Line " . $e->getLine() . "</p>";
+    echo "<pre style='background:#1e293b; padding:15px; border-radius:8px; overflow-x:auto; font-size:12px; color:#a7f3d0;'>" . htmlspecialchars($e->getTraceAsString()) . "</pre>";
+    echo "</div>";
+}
