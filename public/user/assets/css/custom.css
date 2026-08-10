@@ -1386,16 +1386,14 @@ body .main::after {
 }
 
 /* ============================================================
-   HEADER MIDDLE — Soft Aesthetic Sky-Blue & Indigo Tint Design
+   HEADER MIDDLE — Rich Deep Royal Blue Gradient (NO WHITE)
    ============================================================ */
 .header-middle {
-    background: linear-gradient(135deg, #e0f2fe 0%, #e0e7ff 50%, #fef3c7 100%) !important;
-    background-image: radial-gradient(rgba(56, 189, 248, 0.3) 1px, transparent 1px), linear-gradient(135deg, #e0f2fe 0%, #e0e7ff 50%, #fef3c7 100%) !important;
-    background-size: 24px 24px, 100% 100% !important;
-    border-bottom: 2px solid #38bdf8 !important;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3730a3 100%) !important;
+    border-bottom: 2px solid #60a5fa !important;
     padding: 12px 0 !important;
     position: relative;
-    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.1) !important;
+    box-shadow: 0 4px 25px rgba(30, 58, 138, 0.4) !important;
 }
 
 .header-middle .header-wrap {
@@ -1405,7 +1403,7 @@ body .main::after {
 }
 
 /* ============================================================
-   LOGO — Clean White Card Container with Sky-Blue Rim
+   LOGO — White Card Container for High Contrast Logo
    ============================================================ */
 .header-middle .logo.logo-width-1 {
     flex-shrink: 0;
@@ -1413,15 +1411,15 @@ body .main::after {
     align-items: center;
     padding: 6px 14px;
     border-radius: 14px;
-    border: 2px solid #38bdf8;
+    border: 2px solid #60a5fa;
     background: #ffffff !important;
-    box-shadow: 0 4px 18px rgba(2, 132, 199, 0.15);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-middle .logo.logo-width-1:hover {
     border-color: #f59e0b;
-    box-shadow: 0 6px 24px rgba(245, 158, 11, 0.35);
+    box-shadow: 0 6px 24px rgba(245, 158, 11, 0.5);
     transform: translateY(-2px);
 }
 
@@ -1448,7 +1446,7 @@ body .main::after {
 }
 
 /* ============================================================
-   SEARCH BOX — Modern White Search Capsule
+   SEARCH BOX — White Search Capsule on Blue Background
    ============================================================ */
 .search-style-1 {
     width: 100%;
@@ -1461,16 +1459,16 @@ body .main::after {
     display: flex !important;
     align-items: center !important;
     background: #ffffff !important;
-    border: 2px solid #38bdf8 !important;
+    border: 2px solid #f59e0b !important;
     border-radius: 50px !important;
     padding: 3px 4px 3px 18px !important;
-    box-shadow: 0 4px 16px rgba(2, 132, 199, 0.12) !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .search-style-1 form:focus-within {
-    border-color: #0284c7 !important;
-    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.25), 0 6px 22px rgba(2, 132, 199, 0.2) !important;
+    border-color: #fbbf24 !important;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.35), 0 6px 22px rgba(0, 0, 0, 0.3) !important;
 }
 
 .search-style-1 input,
@@ -1500,7 +1498,7 @@ body .main::after {
     right: auto !important;
     top: auto !important;
     transform: none !important;
-    background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%) !important;
+    background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%) !important;
     border: none !important;
     color: #ffffff !important;
     border-radius: 50px !important;
@@ -1513,13 +1511,13 @@ body .main::after {
     justify-content: center !important;
     font-size: 15px !important;
     cursor: pointer !important;
-    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.4) !important;
+    box-shadow: 0 3px 10px rgba(245, 158, 11, 0.5) !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 
 .search-style-1 form button:hover {
     transform: scale(1.08) !important;
-    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.6) !important;
+    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.75) !important;
 }
 
 .search-style-1 form button i {
@@ -1529,7 +1527,7 @@ body .main::after {
 }
 
 /* ============================================================
-   CART ICON CAPSULE — Crisp White Pill with Sky-Blue Rim
+   CART ICON CAPSULE — Frosted Pill on Blue Background
    ============================================================ */
 .header-action-icon-2 {
     position: relative;
@@ -1542,26 +1540,23 @@ body .main::after {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: #ffffff !important;
-    border: 2px solid #38bdf8 !important;
-    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.15);
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-action-icon-2>a.mini-cart-icon img {
-    filter: none !important;
+    filter: brightness(0) invert(1) !important;
     transition: transform 0.3s ease;
 }
 
 .header-action-icon-2>a.mini-cart-icon:hover {
-    background: #0284c7 !important;
-    border-color: #0284c7 !important;
-    box-shadow: 0 0 18px rgba(2, 132, 199, 0.45);
+    background: #f59e0b !important;
+    border-color: #f59e0b !important;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
     transform: translateY(-2px);
-}
-
-.header-action-icon-2>a.mini-cart-icon:hover img {
-    filter: brightness(0) invert(1) !important;
 }
 
 .header-action-icon-2 .pro-count.blue {
@@ -1578,28 +1573,28 @@ body .main::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.5);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.6);
     border: 2px solid #ffffff;
 }
 
 /* ============================================================
-   BOTTOM NAVIGATION — Soft Indigo Tinted Bar
+   BOTTOM NAVIGATION — Solid Rich Royal Blue Bar (NO WHITE)
    ============================================================ */
 .header-bottom,
 .header-bottom.header-bottom-bg-color {
-    background: linear-gradient(90deg, #f0f9ff 0%, #e0e7ff 50%, #f0f9ff 100%) !important;
-    border-bottom: 1.5px solid #cbd5e1 !important;
-    box-shadow: 0 3px 12px rgba(2, 132, 199, 0.08) !important;
+    background: linear-gradient(90deg, #1e3a8a 0%, #1d4ed8 50%, #312e81 100%) !important;
+    border-bottom: 2px solid #3b82f6 !important;
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.35) !important;
 }
 
 .header-bottom.sticky-bar {
-    background: rgba(240, 249, 255, 0.98) !important;
+    background: rgba(30, 58, 138, 0.98) !important;
     backdrop-filter: blur(16px) !important;
-    border-bottom: 1.5px solid #cbd5e1 !important;
-    box-shadow: 0 4px 25px rgba(2, 132, 199, 0.12) !important;
+    border-bottom: 2px solid #3b82f6 !important;
+    box-shadow: 0 4px 25px rgba(30, 58, 138, 0.45) !important;
 }
 
-/* NAV LINKS — Next Level Typography & Underline */
+/* NAV LINKS — Crisp White Text with Glowing Gold Underline */
 .main-menu nav>ul>li {
     position: relative;
     padding: 0 14px;
@@ -1607,7 +1602,7 @@ body .main::after {
 
 .main-menu nav>ul>li>a,
 .main-menu nav ul li a {
-    color: #0f172a !important;
+    color: #ffffff !important;
     font-weight: 700 !important;
     font-size: 14.5px !important;
     padding: 14px 0 !important;
@@ -1615,9 +1610,10 @@ body .main::after {
     letter-spacing: 0.02em !important;
     transition: color 0.25s ease !important;
     position: relative !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Cyber Cyan/Purple underline indicator */
+/* Glowing Gold underline indicator */
 .main-menu nav ul li a::after {
     content: '';
     position: absolute;
@@ -1626,9 +1622,9 @@ body .main::after {
     transform: translateX(-50%) scaleX(0);
     width: 80%;
     height: 3px;
-    background: linear-gradient(90deg, #0284c7, #2563eb, #7c3aed);
+    background: #fde047;
     border-radius: 3px;
-    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.4);
+    box-shadow: 0 0 10px rgba(253, 224, 71, 0.8);
     transition: transform 0.25s ease;
 }
 
@@ -1639,8 +1635,7 @@ body .main::after {
 
 .main-menu nav ul li a:hover,
 .main-menu nav ul li a.active {
-    color: #0284c7 !important;
-    text-shadow: none !important;
+    color: #fde047 !important;
 }
 
 /* Badge inside nav */
@@ -1651,11 +1646,11 @@ body .main::after {
 
 /* Sticky shadow override */
 .sticky-bar.stick {
-    box-shadow: 0 6px 24px rgba(2, 132, 199, 0.12) !important;
+    box-shadow: 0 6px 25px rgba(30, 58, 138, 0.45) !important;
 }
 
 /* ============================================================
-   HOTLINE HUD — Next Level Electric Cyan Capsule
+   HOTLINE HUD — Glowing Amber/Orange Button
    ============================================================ */
 .hotline {
     display: flex;
@@ -1665,23 +1660,23 @@ body .main::after {
 .hotline p {
     margin: 0;
     padding: 7px 20px !important;
-    background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%) !important;
+    background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%) !important;
     border: none !important;
     border-radius: 50px !important;
     color: #ffffff !important;
     font-size: 12.5px !important;
-    font-weight: 700 !important;
-    box-shadow: 0 4px 16px rgba(2, 132, 199, 0.4) !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.5) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .hotline p:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6) !important;
+    box-shadow: 0 6px 22px rgba(245, 158, 11, 0.7) !important;
 }
 
 .hotline p i {
-    color: #fde047 !important;
+    color: #ffffff !important;
     margin-right: 6px;
     font-size: 13px;
 }
