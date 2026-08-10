@@ -1332,19 +1332,30 @@ body .main::after {
 }
 
 /* ============================================================
-   HEADER TOP BAR — Vibrant Royal Indigo & Gold (NO BLACK)
+   NEXT LEVEL HEADER — Electric Cyber Cyan/Purple Gradient (NO BLACK)
    ============================================================ */
+
 .header-top {
-    background: linear-gradient(135deg, #312e81 0%, #4338ca 50%, #4f46e5 100%) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: linear-gradient(90deg, #0284c7 0%, #2563eb 40%, #7c3aed 70%, #db2777 100%) !important;
+    background-size: 200% 200% !important;
+    animation: nextLevelTopSweep 8s ease infinite !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
     padding: 7px 0 !important;
     font-size: 12.5px !important;
     color: #ffffff !important;
+    box-shadow: 0 2px 12px rgba(2, 132, 199, 0.25) !important;
+}
+
+@keyframes nextLevelTopSweep {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .header-top #news-flash li {
     color: #ffffff !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
 }
 
 .header-top .header-info ul li,
@@ -1355,48 +1366,52 @@ body .main::after {
 .header-top .header-info-right ul li a {
     color: #ffffff !important;
     font-weight: 700 !important;
-    transition: color 0.25s !important;
+    transition: color 0.25s ease, transform 0.2s ease !important;
+    display: inline-block;
 }
 
 .header-top .header-info-right ul li a:hover {
     color: #fde047 !important;
+    transform: translateY(-1px);
 }
 
 /* ============================================================
-   HEADER MIDDLE — clean bright white
+   HEADER MIDDLE — Ultra clean white with gradient bottom accent
    ============================================================ */
 .header-middle {
     background: #ffffff !important;
-    border-bottom: 1px solid #e0e7ff !important;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, #0284c7, #2563eb, #7c3aed, #db2777) 1 !important;
     padding: 10px 0 !important;
     position: relative;
-    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.04) !important;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
 }
 
 .header-middle .header-wrap {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
 /* ============================================================
-   LOGO — crisp styling
+   LOGO — Next Level Halo Container
    ============================================================ */
 .header-middle .logo.logo-width-1 {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    padding: 4px 10px;
-    border-radius: 12px;
-    border: 1px solid rgba(79, 70, 229, 0.25);
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.06);
-    transition: all 0.35s ease;
+    padding: 5px 12px;
+    border-radius: 14px;
+    border: 1.5px solid #bae6fd;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+    box-shadow: 0 4px 16px rgba(2, 132, 199, 0.12);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-middle .logo.logo-width-1:hover {
-    border-color: rgba(79, 70, 229, 0.6);
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+    border-color: #0284c7;
+    box-shadow: 0 6px 24px rgba(2, 132, 199, 0.3);
+    transform: translateY(-2px);
 }
 
 .header-middle .logo.logo-width-1 a img {
@@ -1422,7 +1437,7 @@ body .main::after {
 }
 
 /* ============================================================
-   SEARCH BOX — Modern clean search capsule
+   SEARCH BOX — Next Level Pill Capsule
    ============================================================ */
 .search-style-1 {
     width: 100%;
@@ -1435,16 +1450,16 @@ body .main::after {
     display: flex !important;
     align-items: center !important;
     background: #f8fafc !important;
-    border: 1.5px solid #c7d2fe !important;
+    border: 1.5px solid #cbd5e1 !important;
     border-radius: 50px !important;
     padding: 3px 4px 3px 18px !important;
-    box-shadow: 0 2px 6px rgba(79, 70, 229, 0.04) !important;
-    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .search-style-1 form:focus-within {
-    border-color: #6366f1 !important;
-    box-shadow: 0 0 14px rgba(99, 102, 241, 0.3) !important;
+    border-color: #0284c7 !important;
+    box-shadow: 0 0 0 3.5px rgba(2, 132, 199, 0.18), 0 4px 20px rgba(2, 132, 199, 0.2) !important;
     background: #ffffff !important;
 }
 
@@ -1475,7 +1490,7 @@ body .main::after {
     right: auto !important;
     top: auto !important;
     transform: none !important;
-    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%) !important;
+    background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%) !important;
     border: none !important;
     color: #ffffff !important;
     border-radius: 50px !important;
@@ -1488,13 +1503,13 @@ body .main::after {
     justify-content: center !important;
     font-size: 15px !important;
     cursor: pointer !important;
-    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35) !important;
+    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.4) !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 
 .search-style-1 form button:hover {
     transform: scale(1.08) !important;
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.5) !important;
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.6) !important;
 }
 
 .search-style-1 form button i {
@@ -1504,7 +1519,7 @@ body .main::after {
 }
 
 /* ============================================================
-   CART ICON CAPSULE
+   CART ICON CAPSULE — Next Level Glassmorphism
    ============================================================ */
 .header-action-icon-2 {
     position: relative;
@@ -1517,15 +1532,16 @@ body .main::after {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: #e0e7ff;
-    border: 1px solid #c7d2fe;
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    border: 1.5px solid #bae6fd;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-action-icon-2>a.mini-cart-icon:hover {
-    background: #4f46e5;
-    border-color: #4338ca;
-    box-shadow: 0 0 14px rgba(79, 70, 229, 0.35);
+    background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+    border-color: #0284c7;
+    box-shadow: 0 0 16px rgba(2, 132, 199, 0.45);
     transform: translateY(-2px);
 }
 
@@ -1537,9 +1553,9 @@ body .main::after {
     position: absolute;
     top: -3px;
     right: -3px;
-    background: linear-gradient(135deg, #f59e0b, #f97316) !important;
+    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%) !important;
     color: #ffffff !important;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 10px;
     width: 19px;
     height: 19px;
@@ -1547,38 +1563,38 @@ body .main::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.5);
     border: 2px solid #ffffff;
 }
 
 /* ============================================================
-   BOTTOM NAVIGATION — Clean white background with indigo accents
+   BOTTOM NAVIGATION — Clean white background with cyber blue accents
    ============================================================ */
 .header-bottom,
 .header-bottom.header-bottom-bg-color {
     background: #ffffff !important;
-    border-bottom: 1px solid #e0e7ff !important;
-    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.04) !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04) !important;
 }
 
 .header-bottom.sticky-bar {
     background: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur(12px) !important;
-    border-bottom: 1px solid #e0e7ff !important;
-    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.08) !important;
+    backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 25px rgba(15, 23, 42, 0.08) !important;
 }
 
-/* NAV LINKS — Crisp dark indigo text */
+/* NAV LINKS — Next Level Typography & Underline */
 .main-menu nav>ul>li {
     position: relative;
-    padding: 0 12px;
+    padding: 0 14px;
 }
 
 .main-menu nav>ul>li>a,
 .main-menu nav ul li a {
-    color: #1e1b4b !important;
+    color: #0f172a !important;
     font-weight: 700 !important;
-    font-size: 14px !important;
+    font-size: 14.5px !important;
     padding: 14px 0 !important;
     display: inline-block;
     letter-spacing: 0.02em !important;
@@ -1586,17 +1602,18 @@ body .main::after {
     position: relative !important;
 }
 
-/* Indigo/Amber underline indicator */
+/* Cyber Cyan/Purple underline indicator */
 .main-menu nav ul li a::after {
     content: '';
     position: absolute;
     bottom: 8px;
     left: 50%;
     transform: translateX(-50%) scaleX(0);
-    width: 75%;
-    height: 2px;
-    background: linear-gradient(90deg, #4f46e5, #f59e0b);
-    border-radius: 2px;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, #0284c7, #2563eb, #7c3aed);
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.4);
     transition: transform 0.25s ease;
 }
 
@@ -1607,7 +1624,7 @@ body .main::after {
 
 .main-menu nav ul li a:hover,
 .main-menu nav ul li a.active {
-    color: #4f46e5 !important;
+    color: #0284c7 !important;
     text-shadow: none !important;
 }
 
@@ -1619,11 +1636,11 @@ body .main::after {
 
 /* Sticky shadow override */
 .sticky-bar.stick {
-    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.12) !important;
+    box-shadow: 0 6px 24px rgba(2, 132, 199, 0.12) !important;
 }
 
 /* ============================================================
-   HOTLINE HUD — Vibrant Indigo Capsule (NO BLACK)
+   HOTLINE HUD — Next Level Electric Cyan Capsule
    ============================================================ */
 .hotline {
     display: flex;
@@ -1632,31 +1649,31 @@ body .main::after {
 
 .hotline p {
     margin: 0;
-    padding: 7px 18px !important;
-    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%) !important;
+    padding: 7px 20px !important;
+    background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%) !important;
     border: none !important;
     border-radius: 50px !important;
     color: #ffffff !important;
     font-size: 12.5px !important;
     font-weight: 700 !important;
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
-    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 16px rgba(2, 132, 199, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .hotline p:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.5) !important;
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6) !important;
 }
 
 .hotline p i {
     color: #fde047 !important;
-    margin-right: 5px;
+    margin-right: 6px;
     font-size: 13px;
 }
 
 .hotline p span {
     color: #ffffff !important;
-    font-weight: 700;
+    font-weight: 800;
 }
 }
 
