@@ -62,7 +62,7 @@
                             @if (Route::has('login'))
                                 @auth
                                     <li>
-                                        <i class="fi-rs-user" style="margin-right: 5px; color: #f59e0b;"></i><a href="{{ route('user.account') }}" style="max-width: 180px; display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; font-weight: 600; color: #faf5ff;">{{ Auth::user()->name }}</a>
+                                        <i class="fi-rs-user" style="margin-right: 5px; color: #f59e0b;"></i><a href="{{ route('user.account') }}" style="max-width: 180px; display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; font-weight: 600; color: #1e293b;">{{ Auth::user()->name }}</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('user.logout') }}" style="color: #f87171; font-weight: 600;">Logout</a>

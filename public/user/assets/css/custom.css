@@ -1278,27 +1278,21 @@ body .main::after {
    Header & Footer — NO BLUE — Amber · Orange · Magenta · Violet
    ============================================================ */
 
-/* ROOT ACCENT OVERRIDES — Amber/Magenta Theme */
+/* ROOT ACCENT OVERRIDES — Clean Modern Theme */
 :root {
     --accent-primary: #f59e0b;
-    /* amber */
     --accent-hot: #f97316;
-    /* orange */
     --accent-magenta: #e879f9;
-    /* magenta */
     --accent-violet: #a855f7;
-    /* violet */
-    --header-bg: #0a0a1f;
-    /* deep navy */
-    --header-mid-bg: #f59e0b;
-    /* amber accent */
-    --nav-bg: #0a0a0f;
-    --text-bright: #faf5ff;
-    --text-muted: #8b8ba7;
+    --header-bg: #ffffff;
+    --header-top-bg: #f8fafc;
+    --nav-bg: #ffffff;
+    --text-bright: #0f172a;
+    --text-muted: #64748b;
 }
 
 /* ============================================================
-   ANIMATED TOP SWEEP LINE — amber → magenta
+   ANIMATED TOP SWEEP LINE — amber gradient
    ============================================================ */
 .header-area::before {
     content: '';
@@ -1307,8 +1301,9 @@ body .main::after {
     left: 0;
     width: 100%;
     height: 3px;
-    background: #ffffff !important;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8) !important;
+    background: linear-gradient(90deg, #f59e0b, #f97316, #e879f9, #f59e0b) !important;
+    background-size: 200% 100% !important;
+    animation: headerLineSweep 4s linear infinite !important;
     z-index: 10;
 }
 
@@ -1316,11 +1311,9 @@ body .main::after {
     0% {
         background-position: 0% 50%;
     }
-
     50% {
         background-position: 100% 50%;
     }
-
     100% {
         background-position: 0% 50%;
     }
@@ -1329,7 +1322,7 @@ body .main::after {
 /* Cart icon badge */
 .pro-count.blue {
     background: linear-gradient(135deg, #f59e0b, #f97316) !important;
-    color: #0a0a0f !important;
+    color: #ffffff !important;
     font-size: 10px !important;
     min-width: 18px;
     height: 18px;
@@ -1339,39 +1332,40 @@ body .main::after {
 }
 
 /* ============================================================
-   HEADER TOP BAR — compact, dark
+   HEADER TOP BAR — clean light gray
    ============================================================ */
 .header-top {
-    background: #070710 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e2e8f0 !important;
     padding: 6px 0 !important;
     font-size: 12.5px !important;
+    color: #475569 !important;
 }
 
 .header-top .header-info ul li,
 .header-top .header-info-right ul li {
-    color: #8b8ba7 !important;
+    color: #475569 !important;
 }
 
 .header-top .header-info-right ul li a {
-    color: #b8b8cc !important;
+    color: #1e293b !important;
     font-weight: 600 !important;
     transition: color 0.25s !important;
 }
 
 .header-top .header-info-right ul li a:hover {
-    color: #f59e0b !important;
+    color: #d97706 !important;
 }
 
 /* ============================================================
-   HEADER MIDDLE — compact glassmorphism
+   HEADER MIDDLE — clean bright white
    ============================================================ */
 .header-middle {
     background: #ffffff !important;
-    border-bottom: 1px solid #e5e7eb !important;
-    padding: 8px 0 !important;
-    /* compact, not huge */
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 10px 0 !important;
     position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
 }
 
 .header-middle .header-wrap {
@@ -1381,7 +1375,7 @@ body .main::after {
 }
 
 /* ============================================================
-   LOGO — amber glow halo, no excess padding
+   LOGO — crisp styling
    ============================================================ */
 .header-middle .logo.logo-width-1 {
     flex-shrink: 0;
@@ -1389,29 +1383,26 @@ body .main::after {
     align-items: center;
     padding: 4px 10px;
     border-radius: 12px;
-    border: 1px solid rgba(245, 158, 11, 0.22);
-    background: radial-gradient(circle at center, rgba(245, 158, 11, 0.10) 0%, transparent 80%);
-    box-shadow: 0 0 12px rgba(245, 158, 11, 0.18);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     transition: all 0.35s ease;
 }
 
 .header-middle .logo.logo-width-1:hover {
-    border-color: rgba(245, 158, 11, 0.5);
-    box-shadow: 0 0 22px rgba(245, 158, 11, 0.4);
+    border-color: rgba(245, 158, 11, 0.6);
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
 }
 
 .header-middle .logo.logo-width-1 a img {
     max-width: 260px !important;
     max-height: 68px !important;
     object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.5));
     transition: transform 0.35s ease, filter 0.35s ease;
-    animation: fadeInUp 0.7s ease-out;
 }
 
 .header-middle .logo.logo-width-1 a img:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 22px rgba(245, 158, 11, 0.85)) drop-shadow(0 0 8px rgba(249, 115, 22, 0.7));
+    transform: scale(1.03);
 }
 
 /* Footer logo */
@@ -1423,17 +1414,10 @@ body .main::after {
     max-width: 220px !important;
     max-height: 72px !important;
     object-fit: contain;
-    filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.55));
-    animation: fadeInUp 1s ease-out 0.3s both, float 4s ease-in-out 2s infinite;
-}
-
-.footer-mid .logo.logo-width-1 a img:hover {
-    filter: drop-shadow(0 0 24px rgba(245, 158, 11, 0.85));
-    transform: scale(1.06) translateY(-2px);
 }
 
 /* ============================================================
-   SEARCH BOX — Integrated modern pill search capsule
+   SEARCH BOX — Modern clean search capsule
    ============================================================ */
 .search-style-1 {
     width: 100%;
@@ -1445,17 +1429,17 @@ body .main::after {
     position: relative;
     display: flex !important;
     align-items: center !important;
-    background: #f8fafc !important;
+    background: #f1f5f9 !important;
     border: 1.5px solid #cbd5e1 !important;
     border-radius: 50px !important;
     padding: 3px 4px 3px 18px !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
     transition: all 0.3s ease !important;
 }
 
 .search-style-1 form:focus-within {
     border-color: #f59e0b !important;
-    box-shadow: 0 0 16px rgba(245, 158, 11, 0.3), inset 0 0 0 1px #f59e0b !important;
+    box-shadow: 0 0 14px rgba(245, 158, 11, 0.25) !important;
     background: #ffffff !important;
 }
 
@@ -1488,7 +1472,7 @@ body .main::after {
     transform: none !important;
     background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%) !important;
     border: none !important;
-    color: #0a0a0f !important;
+    color: #ffffff !important;
     border-radius: 50px !important;
     width: 38px !important;
     height: 38px !important;
@@ -1499,17 +1483,17 @@ body .main::after {
     justify-content: center !important;
     font-size: 15px !important;
     cursor: pointer !important;
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.45) !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35) !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 
 .search-style-1 form button:hover {
     transform: scale(1.08) !important;
-    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.7) !important;
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.5) !important;
 }
 
 .search-style-1 form button i {
-    color: #0a0a0f !important;
+    color: #ffffff !important;
     font-size: 15px !important;
     line-height: 1 !important;
 }
@@ -1528,15 +1512,15 @@ body .main::after {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: rgba(18, 18, 28, 0.8);
-    border: 1px solid rgba(245, 158, 11, 0.25);
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
     transition: all 0.3s ease;
 }
 
 .header-action-icon-2>a.mini-cart-icon:hover {
-    background: rgba(245, 158, 11, 0.15);
+    background: #fef3c7;
     border-color: #f59e0b;
-    box-shadow: 0 0 16px rgba(245, 158, 11, 0.5);
+    box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
     transform: translateY(-2px);
 }
 
@@ -1545,7 +1529,7 @@ body .main::after {
     top: -3px;
     right: -3px;
     background: linear-gradient(135deg, #f59e0b, #f97316) !important;
-    color: #0a0a0f !important;
+    color: #ffffff !important;
     font-weight: 700;
     font-size: 10px;
     width: 19px;
@@ -1554,28 +1538,28 @@ body .main::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 8px rgba(245, 158, 11, 0.65);
-    border: 2px solid #0a0a0f;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+    border: 2px solid #ffffff;
 }
 
 /* ============================================================
-   BOTTOM NAVIGATION — amber line theme, compact
+   BOTTOM NAVIGATION — Clean white background with dark text
    ============================================================ */
 .header-bottom,
 .header-bottom.header-bottom-bg-color {
-    background: #070710 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
 .header-bottom.sticky-bar {
-    background: rgba(7, 7, 16, 0.97) !important;
-    backdrop-filter: blur(20px) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
-/* NAV LINKS — compact, amber hover */
+/* NAV LINKS — Crisp dark text */
 .main-menu nav>ul>li {
     position: relative;
     padding: 0 12px;
@@ -1583,17 +1567,17 @@ body .main::after {
 
 .main-menu nav>ul>li>a,
 .main-menu nav ul li a {
-    color: #b8b8cc !important;
+    color: #1e293b !important;
     font-weight: 600 !important;
-    font-size: 13.5px !important;
+    font-size: 14px !important;
     padding: 14px 0 !important;
     display: inline-block;
-    letter-spacing: 0.03em !important;
+    letter-spacing: 0.02em !important;
     transition: color 0.25s ease !important;
     position: relative !important;
 }
 
-/* Neon amber underline indicator */
+/* Amber underline indicator */
 .main-menu nav ul li a::after {
     content: '';
     position: absolute;
@@ -1602,9 +1586,8 @@ body .main::after {
     transform: translateX(-50%) scaleX(0);
     width: 75%;
     height: 2px;
-    background: linear-gradient(90deg, #f59e0b, #e879f9);
+    background: linear-gradient(90deg, #f59e0b, #f97316);
     border-radius: 2px;
-    box-shadow: 0 0 8px rgba(245, 158, 11, 0.7);
     transition: transform 0.25s ease;
 }
 
@@ -1615,8 +1598,8 @@ body .main::after {
 
 .main-menu nav ul li a:hover,
 .main-menu nav ul li a.active {
-    color: #f59e0b !important;
-    text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+    color: #d97706 !important;
+    text-shadow: none !important;
 }
 
 /* Badge inside nav */
@@ -2323,16 +2306,16 @@ img, video, iframe, canvas, svg {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #ffffff;
+    background-color: #1e293b !important;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
 .burger-icon.burger-icon-white span {
-    background-color: #ffffff;
+    background-color: #1e293b !important;
 }
 
-/* Mobile Header Wrapper & Slide-out Menu */
+/* Mobile Header Wrapper & Slide-out Menu — Clean Light Theme */
 .mobile-header-active {
     position: fixed;
     top: 0;
@@ -2340,13 +2323,14 @@ img, video, iframe, canvas, svg {
     width: 320px;
     max-width: 85vw;
     height: 100vh;
-    background: #0d0d16;
+    background: #ffffff !important;
+    color: #0f172a !important;
     z-index: 9999;
     transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
     overflow-y: auto;
-    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.7);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
     padding: 20px 25px;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid #e2e8f0;
 }
 
 .mobile-header-active.sidebar-visible {
@@ -2359,7 +2343,7 @@ img, video, iframe, canvas, svg {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
     z-index: 9998;
     opacity: 0;
@@ -2378,18 +2362,18 @@ body.mobile-menu-active .body-overlay-1 {
     justify-content: space-between;
     margin-bottom: 25px;
     padding-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .mobile-header-logo img {
-    max-height: 40px;
+    max-height: 48px;
     width: auto;
 }
 
 .mobile-menu-close button {
     background: transparent;
     border: none;
-    color: #fff;
+    color: #0f172a !important;
     font-size: 24px;
     cursor: pointer;
 }
@@ -2402,10 +2386,10 @@ body.mobile-menu-active .body-overlay-1 {
 .mobile-search input {
     width: 100%;
     padding: 10px 40px 10px 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
     border-radius: 8px;
-    color: #fff;
+    color: #0f172a !important;
 }
 
 .mobile-search button {
@@ -2429,7 +2413,7 @@ body.mobile-menu-active .body-overlay-1 {
 }
 
 .mobile-menu li a {
-    color: #e2e8f0;
+    color: #1e293b !important;
     font-size: 15px;
     font-weight: 600;
     display: block;
@@ -2439,12 +2423,12 @@ body.mobile-menu-active .body-overlay-1 {
 
 .mobile-menu li a:hover,
 .mobile-menu li a.active {
-    color: #f59e0b;
+    color: #d97706 !important;
 }
 
 .mobile-header-info-wrap {
     padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #e2e8f0;
 }
 
 .single-mobile-header-info {
@@ -2452,8 +2436,9 @@ body.mobile-menu-active .body-overlay-1 {
 }
 
 .single-mobile-header-info a {
-    color: #94a3b8;
+    color: #334155 !important;
     font-size: 14px;
+    font-weight: 500;
 }
 
 /* ============================================================
