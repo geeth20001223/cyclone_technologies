@@ -1582,7 +1582,7 @@ body .main::after {
     line-height: 1 !important;
 }
 
-/* ── CART ICON ── Glassmorphism Circle with Pulse ─────────────── */
+/* ── CART ICON ── Ultra Colorful Neon Gradient Circle with Glow ── */
 .header-action-icon-2 {
     position: relative;
 }
@@ -1591,49 +1591,60 @@ body .main::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.16) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%) !important;
+    border: 2px solid #fde047 !important;
     box-shadow: 
-        0 4px 16px rgba(0, 0, 0, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        0 4px 20px rgba(236, 72, 153, 0.55),
+        0 0 25px rgba(139, 92, 246, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    animation: cartIconGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes cartIconGlow {
+    0% {
+        box-shadow: 0 4px 20px rgba(236, 72, 153, 0.55), 0 0 25px rgba(139, 92, 246, 0.4);
+    }
+    100% {
+        box-shadow: 0 6px 26px rgba(6, 182, 212, 0.7), 0 0 35px rgba(245, 158, 11, 0.6);
+    }
 }
 
 .header-action-icon-2>a.mini-cart-icon img {
-    filter: brightness(0) invert(1) !important;
-    transition: all 0.3s ease;
+    width: 22px !important;
+    height: 22px !important;
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+    transition: all 0.3s ease !important;
 }
 
 .header-action-icon-2>a.mini-cart-icon:hover {
-    background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%) !important;
-    border-color: #f59e0b !important;
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%) !important;
+    border-color: #ffffff !important;
     box-shadow: 
-        0 0 24px rgba(245, 158, 11, 0.65),
-        0 8px 24px rgba(0, 0, 0, 0.35);
-    transform: translateY(-3px) scale(1.05);
+        0 0 30px rgba(245, 158, 11, 0.8),
+        0 8px 28px rgba(0, 0, 0, 0.4) !important;
+    transform: translateY(-3px) scale(1.1) rotate(-5deg) !important;
 }
 
 .header-action-icon-2 .pro-count.blue {
     position: absolute;
-    top: -4px;
-    right: -4px;
-    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%) !important;
-    color: #ffffff !important;
-    font-weight: 800;
-    font-size: 10px;
-    width: 20px;
-    height: 20px;
+    top: -5px;
+    right: -5px;
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%) !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    font-size: 11px !important;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 10px rgba(239, 68, 68, 0.7);
-    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 14px rgba(0, 242, 254, 0.85);
+    border: 2px solid #ffffff;
     animation: cartBadgePulse 2s ease-in-out infinite;
 }
 
