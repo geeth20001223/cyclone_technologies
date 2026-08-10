@@ -2978,10 +2978,10 @@ i[class*=" fi-"],
 }
 
 /* ================================================================
-   TRANSPARENT HEADER ICONS — ZERO BACKGROUND BOXES
+   NEXT-LEVEL ANIMATED LOGO — Cyber Pulse, Neon Aura & Shimmer Sweep
    ================================================================ */
 
-/* Remove background from Logo */
+/* Remove background & border from Logo container */
 .header-middle .logo.logo-width-1,
 div.logo.logo-width-1,
 .logo-width-1,
@@ -2990,36 +2990,88 @@ div.logo.logo-width-1,
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    overflow: visible !important;
 }
 
+.header-middle .logo.logo-width-1 a,
+.logo.logo-width-1 a {
+    position: relative !important;
+    display: inline-block !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    padding: 4px 8px !important;
+}
+
+/* Shimmer Light Bar Sweep Effect */
+.header-middle .logo.logo-width-1 a::after,
+.logo-width-1 a::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -150% !important;
+    width: 60% !important;
+    height: 200% !important;
+    background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        transparent 100%
+    ) !important;
+    transform: rotate(25deg) !important;
+    animation: logoShimmerSweep 5s ease-in-out infinite !important;
+    pointer-events: none !important;
+}
+
+@keyframes logoShimmerSweep {
+    0% {
+        left: -150%;
+    }
+    30% {
+        left: 200%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+/* Animated Logo Image: Continuous Cyber Pulse & Glowing Neon Aura */
 .header-middle .logo.logo-width-1 a img,
 .logo.logo-width-1 img,
 .logo img {
     max-width: 260px !important;
     max-height: 68px !important;
     object-fit: contain !important;
-    filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) !important;
-    transition: transform 0.35s ease !important;
+    filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(56, 189, 248, 0.75)) !important;
+    animation: cyberLogoPulse 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate !important;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease !important;
+    will-change: transform, filter !important;
 }
 
-.header-middle .logo.logo-width-1 a img:hover,
-.logo.logo-width-1 img:hover {
-    transform: scale(1.05) !important;
+@keyframes cyberLogoPulse {
+    0% {
+        transform: scale(1);
+        filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(56, 189, 248, 0.65)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    }
+    50% {
+        transform: scale(1.035);
+        filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(168, 85, 247, 0.85)) drop-shadow(0 0 25px rgba(56, 189, 248, 0.5));
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(0) invert(1) drop-shadow(0 0 14px rgba(245, 158, 11, 0.8)) drop-shadow(0 0 20px rgba(239, 68, 68, 0.5));
+    }
 }
 
-/* Remove background from Cart Icon */
-.header-action-icon-2>a.mini-cart-icon {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-}
-
-.header-action-icon-2>a.mini-cart-icon img {
-    filter: brightness(0) invert(1) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4)) !important;
-    transition: transform 0.3s ease !important;
-}
-
-.header-action-icon-2>a.mini-cart-icon:hover img {
-    transform: scale(1.15) !important;
+/* Hover State: 3D Lift with Explosive Dual Neon Aura Glow */
+.header-middle .logo.logo-width-1:hover a img,
+.logo-width-1:hover img,
+.logo:hover img {
+    transform: translateY(-4px) scale(1.07) rotate(-1deg) !important;
+    filter: brightness(0) invert(1) 
+            drop-shadow(0 0 20px rgba(56, 189, 248, 0.95)) 
+            drop-shadow(0 0 35px rgba(245, 158, 11, 0.85)) !important;
+    animation-play-state: paused !important;
 }
