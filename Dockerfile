@@ -2,7 +2,7 @@
 # Cyclone Technologies — Render.com Production Dockerfile
 # ============================================
 
-FROM php:8.3-apache
+FROM php:8.2-apache
 
 # --------------------------------------------
 # System dependencies & PHP extensions
@@ -70,7 +70,8 @@ RUN composer install \
     --no-dev \
     --optimize-autoloader \
     --no-interaction \
-    --prefer-dist
+    --prefer-dist \
+    --ignore-platform-reqs
 
 # --------------------------------------------
 # Build frontend assets (Vite / Tailwind / JS)
