@@ -1238,10 +1238,11 @@ body .main::after {
 }
 
 /* ---- Middle bar (logo + search + cart) ---- */
+.header-middle,
 .header-middle.header-middle-ptb-1 {
-    background: #ffffff !important;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) !important;
-    padding: 18px 0 !important;
+    background: linear-gradient(135deg, #0c1445 0%, #1e3a8a 35%, #2563eb 70%, #312e81 100%) !important;
+    box-shadow: 0 4px 20px rgba(12, 20, 69, 0.4) !important;
+    padding: 14px 0 !important;
 }
 
 /* Search bar upgrade */
@@ -1355,21 +1356,34 @@ body .main::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
     background-size: 200% 100%;
     animation: headerShimmer 4s linear infinite;
     pointer-events: none;
 }
 
 @keyframes headerMeshFlow {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @keyframes headerShimmer {
-    0%   { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
 }
 
 .header-top #news-flash li {
@@ -1436,8 +1450,13 @@ body .main::after {
 }
 
 @keyframes orbFloat {
-    0%   { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(30px, 20px) scale(1.15); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(30px, 20px) scale(1.15);
+    }
 }
 
 .header-middle .header-wrap {
@@ -1448,27 +1467,28 @@ body .main::after {
     z-index: 2;
 }
 
-/* ── LOGO ── Deep Cyber Sapphire Card Container (NO WHITE BACKGROUND) ── */
+/* ── LOGO ── Elevated Glassmorphism White Card ─────────────────── */
 .header-middle .logo.logo-width-1 {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    padding: 8px 18px;
+    padding: 7px 16px;
     border-radius: 16px;
-    border: 2px solid #38bdf8 !important;
-    background: linear-gradient(135deg, #0c1838 0%, #152a5a 50%, #1e3a8a 100%) !important;
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.4),
-        0 0 25px rgba(56, 189, 248, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.96) !important;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-middle .logo.logo-width-1:hover {
-    border-color: #f59e0b !important;
-    box-shadow: 
-        0 12px 40px rgba(245, 158, 11, 0.55),
-        0 0 30px rgba(245, 158, 11, 0.4) !important;
+    border-color: #f59e0b;
+    box-shadow:
+        0 12px 40px rgba(245, 158, 11, 0.45),
+        0 0 0 1px rgba(245, 158, 11, 0.3),
+        0 0 40px rgba(245, 158, 11, 0.15);
     transform: translateY(-3px);
 }
 
@@ -1476,7 +1496,6 @@ body .main::after {
     max-width: 260px !important;
     max-height: 68px !important;
     object-fit: contain;
-    filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5)) !important;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1512,7 +1531,7 @@ body .main::after {
     border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
     border-radius: 50px !important;
     padding: 3px 4px 3px 18px !important;
-    box-shadow: 
+    box-shadow:
         0 4px 20px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -1521,7 +1540,7 @@ body .main::after {
 .search-style-1 form:focus-within {
     border-color: #fbbf24 !important;
     background: rgba(255, 255, 255, 0.22) !important;
-    box-shadow: 
+    box-shadow:
         0 0 0 3px rgba(251, 191, 36, 0.35),
         0 8px 30px rgba(0, 0, 0, 0.35),
         inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
@@ -1596,7 +1615,7 @@ body .main::after {
     border-radius: 50%;
     background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%) !important;
     border: 2px solid #fde047 !important;
-    box-shadow: 
+    box-shadow:
         0 4px 20px rgba(236, 72, 153, 0.55),
         0 0 25px rgba(139, 92, 246, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
@@ -1608,6 +1627,7 @@ body .main::after {
     0% {
         box-shadow: 0 4px 20px rgba(236, 72, 153, 0.55), 0 0 25px rgba(139, 92, 246, 0.4);
     }
+
     100% {
         box-shadow: 0 6px 26px rgba(6, 182, 212, 0.7), 0 0 35px rgba(245, 158, 11, 0.6);
     }
@@ -1623,7 +1643,7 @@ body .main::after {
 .header-action-icon-2>a.mini-cart-icon:hover {
     background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%) !important;
     border-color: #ffffff !important;
-    box-shadow: 
+    box-shadow:
         0 0 30px rgba(245, 158, 11, 0.8),
         0 8px 28px rgba(0, 0, 0, 0.4) !important;
     transform: translateY(-3px) scale(1.1) rotate(-5deg) !important;
@@ -1649,8 +1669,15 @@ body .main::after {
 }
 
 @keyframes cartBadgePulse {
-    0%, 100% { transform: scale(1); }
-    50%      { transform: scale(1.15); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
 }
 
 /* ── BOTTOM NAV ── Matching Deep Blue with Gold Accents ───────── */
@@ -1743,7 +1770,7 @@ body .main::after {
     color: #ffffff !important;
     font-size: 12.5px !important;
     font-weight: 800 !important;
-    box-shadow: 
+    box-shadow:
         0 4px 18px rgba(245, 158, 11, 0.55),
         0 0 40px rgba(245, 158, 11, 0.15) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -1751,8 +1778,15 @@ body .main::after {
 }
 
 @keyframes hotlinePulse {
-    0%, 100% { box-shadow: 0 4px 18px rgba(245, 158, 11, 0.55), 0 0 0 0 rgba(245, 158, 11, 0.3); }
-    50%      { box-shadow: 0 4px 18px rgba(245, 158, 11, 0.55), 0 0 0 8px rgba(245, 158, 11, 0); }
+
+    0%,
+    100% {
+        box-shadow: 0 4px 18px rgba(245, 158, 11, 0.55), 0 0 0 0 rgba(245, 158, 11, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 4px 18px rgba(245, 158, 11, 0.55), 0 0 0 8px rgba(245, 158, 11, 0);
+    }
 }
 
 .hotline p:hover {
@@ -2388,11 +2422,12 @@ footer .text-brand {
 }
 
 /* Override old header-middle white background */
+.header-middle,
 .header-middle.header-middle-ptb-1 {
-    background: #ffffff !important;
-    border-bottom: 1px solid #e5e7eb !important;
-    padding: 8px 0 !important;
-    box-shadow: none !important;
+    background: linear-gradient(135deg, #0c1445 0%, #1e3a8a 35%, #2563eb 70%, #312e81 100%) !important;
+    border-bottom: none !important;
+    padding: 14px 0 !important;
+    box-shadow: 0 4px 20px rgba(12, 20, 69, 0.4) !important;
 }
 
 /* Override old search input light styles */
@@ -2942,4 +2977,33 @@ i[class*=" fi-"],
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+}
+
+/* ================================================================
+   ULTIMATE MASTER OVERRIDE — ABSOLUTE ZERO WHITE HEADER BACKGROUND
+   ================================================================ */
+header.header-area,
+.header-area,
+.header-middle,
+.header-middle.header-middle-ptb-1,
+div.header-middle,
+div.header-middle-ptb-1 {
+    background: linear-gradient(135deg, #0c1445 0%, #1e3a8a 35%, #2563eb 70%, #312e81 100%) !important;
+    box-shadow: 0 8px 32px rgba(12, 20, 69, 0.5) !important;
+}
+
+/* Absolute Zero White Box behind Logo */
+.header-middle .logo.logo-width-1,
+div.logo.logo-width-1,
+.logo-width-1,
+.logo {
+    background: linear-gradient(135deg, #0c1838 0%, #152a5a 50%, #1e3a8a 100%) !important;
+    border: 2px solid #38bdf8 !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 25px rgba(56, 189, 248, 0.35) !important;
+}
+
+.header-middle .logo.logo-width-1 a img,
+.logo.logo-width-1 img,
+.logo img {
+    filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5)) !important;
 }
