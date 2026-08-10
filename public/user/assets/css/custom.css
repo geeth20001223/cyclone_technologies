@@ -1448,28 +1448,27 @@ body .main::after {
     z-index: 2;
 }
 
-/* ── LOGO ── Elevated Glassmorphism White Card ─────────────────── */
+/* ── LOGO ── Deep Cyber Sapphire Card Container (NO WHITE BACKGROUND) ── */
 .header-middle .logo.logo-width-1 {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    padding: 7px 16px;
+    padding: 8px 18px;
     border-radius: 16px;
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.96) !important;
+    border: 2px solid #38bdf8 !important;
+    background: linear-gradient(135deg, #0c1838 0%, #152a5a 50%, #1e3a8a 100%) !important;
     box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(56, 189, 248, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-middle .logo.logo-width-1:hover {
-    border-color: #f59e0b;
+    border-color: #f59e0b !important;
     box-shadow: 
-        0 12px 40px rgba(245, 158, 11, 0.45),
-        0 0 0 1px rgba(245, 158, 11, 0.3),
-        0 0 40px rgba(245, 158, 11, 0.15);
+        0 12px 40px rgba(245, 158, 11, 0.55),
+        0 0 30px rgba(245, 158, 11, 0.4) !important;
     transform: translateY(-3px);
 }
 
@@ -1477,6 +1476,7 @@ body .main::after {
     max-width: 260px !important;
     max-height: 68px !important;
     object-fit: contain;
+    filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5)) !important;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
