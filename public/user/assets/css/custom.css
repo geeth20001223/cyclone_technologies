@@ -1332,29 +1332,34 @@ body .main::after {
 }
 
 /* ============================================================
-   HEADER TOP BAR — clean light gray
+   HEADER TOP BAR — Vibrant Royal Indigo & Gold (NO BLACK)
    ============================================================ */
 .header-top {
-    background: #f8fafc !important;
-    border-bottom: 1px solid #e2e8f0 !important;
-    padding: 6px 0 !important;
+    background: linear-gradient(135deg, #312e81 0%, #4338ca 50%, #4f46e5 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 7px 0 !important;
     font-size: 12.5px !important;
-    color: #475569 !important;
+    color: #ffffff !important;
+}
+
+.header-top #news-flash li {
+    color: #ffffff !important;
+    font-weight: 500 !important;
 }
 
 .header-top .header-info ul li,
 .header-top .header-info-right ul li {
-    color: #475569 !important;
+    color: #ffffff !important;
 }
 
 .header-top .header-info-right ul li a {
-    color: #1e293b !important;
-    font-weight: 600 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
     transition: color 0.25s !important;
 }
 
 .header-top .header-info-right ul li a:hover {
-    color: #d97706 !important;
+    color: #fde047 !important;
 }
 
 /* ============================================================
@@ -1362,10 +1367,10 @@ body .main::after {
    ============================================================ */
 .header-middle {
     background: #ffffff !important;
-    border-bottom: 1px solid #e2e8f0 !important;
+    border-bottom: 1px solid #e0e7ff !important;
     padding: 10px 0 !important;
     position: relative;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.04) !important;
 }
 
 .header-middle .header-wrap {
@@ -1383,22 +1388,22 @@ body .main::after {
     align-items: center;
     padding: 4px 10px;
     border-radius: 12px;
-    border: 1px solid rgba(245, 158, 11, 0.25);
+    border: 1px solid rgba(79, 70, 229, 0.25);
     background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.06);
     transition: all 0.35s ease;
 }
 
 .header-middle .logo.logo-width-1:hover {
-    border-color: rgba(245, 158, 11, 0.6);
-    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+    border-color: rgba(79, 70, 229, 0.6);
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
 }
 
 .header-middle .logo.logo-width-1 a img {
     max-width: 260px !important;
     max-height: 68px !important;
     object-fit: contain;
-    transition: transform 0.35s ease, filter 0.35s ease;
+    transition: transform 0.35s ease;
 }
 
 .header-middle .logo.logo-width-1 a img:hover {
@@ -1429,17 +1434,17 @@ body .main::after {
     position: relative;
     display: flex !important;
     align-items: center !important;
-    background: #f1f5f9 !important;
-    border: 1.5px solid #cbd5e1 !important;
+    background: #f8fafc !important;
+    border: 1.5px solid #c7d2fe !important;
     border-radius: 50px !important;
     padding: 3px 4px 3px 18px !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+    box-shadow: 0 2px 6px rgba(79, 70, 229, 0.04) !important;
     transition: all 0.3s ease !important;
 }
 
 .search-style-1 form:focus-within {
-    border-color: #f59e0b !important;
-    box-shadow: 0 0 14px rgba(245, 158, 11, 0.25) !important;
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 14px rgba(99, 102, 241, 0.3) !important;
     background: #ffffff !important;
 }
 
@@ -1470,7 +1475,7 @@ body .main::after {
     right: auto !important;
     top: auto !important;
     transform: none !important;
-    background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%) !important;
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%) !important;
     border: none !important;
     color: #ffffff !important;
     border-radius: 50px !important;
@@ -1483,13 +1488,13 @@ body .main::after {
     justify-content: center !important;
     font-size: 15px !important;
     cursor: pointer !important;
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35) !important;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35) !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 
 .search-style-1 form button:hover {
     transform: scale(1.08) !important;
-    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.5) !important;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.5) !important;
 }
 
 .search-style-1 form button i {
@@ -1512,16 +1517,20 @@ body .main::after {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
+    background: #e0e7ff;
+    border: 1px solid #c7d2fe;
     transition: all 0.3s ease;
 }
 
 .header-action-icon-2>a.mini-cart-icon:hover {
-    background: #fef3c7;
-    border-color: #f59e0b;
-    box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
+    background: #4f46e5;
+    border-color: #4338ca;
+    box-shadow: 0 0 14px rgba(79, 70, 229, 0.35);
     transform: translateY(-2px);
+}
+
+.header-action-icon-2>a.mini-cart-icon:hover img {
+    filter: brightness(0) invert(1);
 }
 
 .header-action-icon-2 .pro-count.blue {
@@ -1543,23 +1552,23 @@ body .main::after {
 }
 
 /* ============================================================
-   BOTTOM NAVIGATION — Clean white background with dark text
+   BOTTOM NAVIGATION — Clean white background with indigo accents
    ============================================================ */
 .header-bottom,
 .header-bottom.header-bottom-bg-color {
     background: #ffffff !important;
-    border-bottom: 1px solid #e2e8f0 !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+    border-bottom: 1px solid #e0e7ff !important;
+    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.04) !important;
 }
 
 .header-bottom.sticky-bar {
     background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(12px) !important;
-    border-bottom: 1px solid #e2e8f0 !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+    border-bottom: 1px solid #e0e7ff !important;
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.08) !important;
 }
 
-/* NAV LINKS — Crisp dark text */
+/* NAV LINKS — Crisp dark indigo text */
 .main-menu nav>ul>li {
     position: relative;
     padding: 0 12px;
@@ -1567,8 +1576,8 @@ body .main::after {
 
 .main-menu nav>ul>li>a,
 .main-menu nav ul li a {
-    color: #1e293b !important;
-    font-weight: 600 !important;
+    color: #1e1b4b !important;
+    font-weight: 700 !important;
     font-size: 14px !important;
     padding: 14px 0 !important;
     display: inline-block;
@@ -1577,7 +1586,7 @@ body .main::after {
     position: relative !important;
 }
 
-/* Amber underline indicator */
+/* Indigo/Amber underline indicator */
 .main-menu nav ul li a::after {
     content: '';
     position: absolute;
@@ -1586,7 +1595,7 @@ body .main::after {
     transform: translateX(-50%) scaleX(0);
     width: 75%;
     height: 2px;
-    background: linear-gradient(90deg, #f59e0b, #f97316);
+    background: linear-gradient(90deg, #4f46e5, #f59e0b);
     border-radius: 2px;
     transition: transform 0.25s ease;
 }
@@ -1598,7 +1607,7 @@ body .main::after {
 
 .main-menu nav ul li a:hover,
 .main-menu nav ul li a.active {
-    color: #d97706 !important;
+    color: #4f46e5 !important;
     text-shadow: none !important;
 }
 
@@ -1610,11 +1619,11 @@ body .main::after {
 
 /* Sticky shadow override */
 .sticky-bar.stick {
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.55) !important;
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.12) !important;
 }
 
 /* ============================================================
-   HOTLINE HUD — amber capsule
+   HOTLINE HUD — Vibrant Indigo Capsule (NO BLACK)
    ============================================================ */
 .hotline {
     display: flex;
@@ -1623,31 +1632,32 @@ body .main::after {
 
 .hotline p {
     margin: 0;
-    padding: 6px 16px;
-    background: rgba(18, 18, 28, 0.85);
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    border-radius: 50px;
-    color: #8b8ba7;
-    font-size: 12.5px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    padding: 7px 18px !important;
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    color: #ffffff !important;
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
+    transition: all 0.3s ease !important;
 }
 
 .hotline p:hover {
-    border-color: #f59e0b;
-    box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
-    transform: translateY(-2px);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.5) !important;
 }
 
 .hotline p i {
-    color: #f59e0b;
+    color: #fde047 !important;
     margin-right: 5px;
     font-size: 13px;
 }
 
 .hotline p span {
-    color: #faf5ff;
+    color: #ffffff !important;
     font-weight: 700;
+}
 }
 
 /* SUB-MENU DROPDOWN */

@@ -49,9 +49,9 @@
                         </style>
                         <div id="news-flash" class="d-inline-block" style="margin-top: 2px;">
                             <ul>
-                                <li><span class="badge-hot-deal" style="background: linear-gradient(135deg, #f59e0b, #f97316); color: #0a0a0f; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-right: 8px; box-shadow: 0 0 10px rgba(245,158,11,0.55);">🔥 HOT DEAL</span> Get premium gaming peripherals up to 50% off <a href="{{route('user.shop')}}" style="color: #f59e0b; font-weight: 600; margin-left: 8px;">View details →</a></li>
-                                <li><span class="badge-hot-deal" style="background: linear-gradient(135deg, #e879f9, #a855f7); color: #0a0a0f; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-right: 8px; box-shadow: 0 0 10px rgba(232,121,249,0.5);">⚡ BUNDLES</span> Build your dream PC - Save more with custom bundle deals</li>
-                                <li><span class="badge-hot-deal" style="background: linear-gradient(135deg, #f97316, #ef4444); color: #fff; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-right: 8px; box-shadow: 0 0 10px rgba(249,115,22,0.5);">NEW ARRIVALS</span> Latest GPUs & CPUs in stock, save up to 35% today <a href="{{route('user.shop')}}" style="color: #f59e0b; font-weight: 600; margin-left: 8px;">Shop now →</a></li>
+                                <li style="color: #ffffff;"><span class="badge-hot-deal" style="background: linear-gradient(135deg, #f59e0b, #f97316); color: #ffffff; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-right: 8px; box-shadow: 0 2px 8px rgba(245,158,11,0.4);">🔥 HOT DEAL</span> <span style="color: #ffffff;">Get premium gaming peripherals up to 50% off</span> <a href="{{route('user.shop')}}" style="color: #fde047; font-weight: 700; margin-left: 8px;">View details →</a></li>
+                                <li style="color: #ffffff;"><span class="badge-hot-deal" style="background: linear-gradient(135deg, #e879f9, #a855f7); color: #ffffff; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-right: 8px; box-shadow: 0 2px 8px rgba(232,121,249,0.4);">⚡ BUNDLES</span> <span style="color: #ffffff;">Build your dream PC - Save more with custom bundle deals</span></li>
+                                <li style="color: #ffffff;"><span class="badge-hot-deal" style="background: linear-gradient(135deg, #f97316, #ef4444); color: #ffffff; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-right: 8px; box-shadow: 0 2px 8px rgba(249,115,22,0.4);">NEW ARRIVALS</span> <span style="color: #ffffff;">Latest GPUs & CPUs in stock, save up to 35% today</span> <a href="{{route('user.shop')}}" style="color: #fde047; font-weight: 700; margin-left: 8px;">Shop now →</a></li>
                             </ul>
                         </div>
                     </div>
@@ -62,14 +62,14 @@
                             @if (Route::has('login'))
                                 @auth
                                     <li>
-                                        <i class="fi-rs-user" style="margin-right: 5px; color: #f59e0b;"></i><a href="{{ route('user.account') }}" style="max-width: 180px; display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; font-weight: 600; color: #1e293b;">{{ Auth::user()->name }}</a>
+                                        <i class="fi-rs-user" style="margin-right: 5px; color: #fde047;"></i><a href="{{ route('user.account') }}" style="max-width: 180px; display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; font-weight: 700; color: #ffffff;">{{ Auth::user()->name }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('user.logout') }}" style="color: #f87171; font-weight: 600;">Logout</a>
+                                        <a href="{{ route('user.logout') }}" style="color: #fca5a5; font-weight: 700;">Logout</a>
                                     </li>
                                 @else
                                     <li>
-                                        <i class="fi-rs-key" style="color: #f59e0b; margin-right: 4px;"></i><a href="{{route('login')}}" style="font-weight: 600; color: #f59e0b;">Log In</a> <span style="color: #5a5a72; margin: 0 4px;">/</span> <a href="{{route('register')}}" style="font-weight: 600; color: #e879f9;">Sign Up</a>
+                                        <i class="fi-rs-key" style="color: #fde047; margin-right: 4px;"></i><a href="{{route('login')}}" style="font-weight: 700; color: #ffffff;">Log In</a> <span style="color: rgba(255,255,255,0.6); margin: 0 4px;">/</span> <a href="{{route('register')}}" style="font-weight: 700; color: #fde047;">Sign Up</a>
                                     </li>
                                 @endauth
                             @endif                              
