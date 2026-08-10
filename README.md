@@ -104,9 +104,27 @@ A modern, full-featured, **100% Mobile Responsive** e-commerce application built
 
 ---
 
-## ☁️ Deployment (Vercel + Supabase)
+## ☁️ Deployment
 
-This repository includes pre-configured deployment files for **Vercel**:
+### 🔴 Render.com (Recommended Containerized Deployment)
+
+This repository is pre-configured with a production-ready **Docker** & **Render Blueprint (`render.yaml`)** setup:
+
+1. **Push your repository to GitHub / GitLab**.
+2. Log into [Render Dashboard](https://dashboard.render.com).
+3. Click **New +** -> **Blueprint** (or **Web Service**).
+4. Connect your `cyclone_technologies` repository.
+5. Render will automatically detect `render.yaml` and set up the Docker web service.
+6. Configure your environment variables on Render:
+   - `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` (Point to your MySQL or PostgreSQL database like Supabase or FreeSQLDatabase).
+   - `APP_URL` (Set to your live Render app URL: `https://<your-app-name>.onrender.com`).
+7. Click **Apply** or **Deploy Web Service**! 🚀
+
+---
+
+### ⚡ Vercel + Supabase (Serverless Deployment)
+
+This repository also includes pre-configured deployment files for **Vercel**:
 - `vercel.json` (Vercel routes & static asset handling)
 - `api/index.php` (Serverless PHP entrypoint)
 - `supabase_import.sql` (PostgreSQL database import script)
