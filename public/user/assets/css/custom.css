@@ -1333,39 +1333,54 @@ body .main::after {
     font-weight: 700;
 }
 
-/* ============================================================
-   NEXT LEVEL HEADER — Electric Cyber Cyan/Purple Gradient (NO BLACK)
-   ============================================================ */
+/* ================================================================
+   ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗ 
+   ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+   ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+   ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+   ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+   NEXT LEVEL PREMIUM — Animated Mesh Gradient + Glassmorphism
+   ================================================================ */
 
+/* ── TOP BAR ── Animated 4-color flowing gradient ─────────────── */
 .header-top {
-    background: linear-gradient(90deg, #0284c7 0%, #2563eb 40%, #7c3aed 70%, #db2777 100%) !important;
-    background-size: 200% 200% !important;
-    animation: nextLevelTopSweep 8s ease infinite !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: linear-gradient(270deg, #0ea5e9, #6366f1, #a855f7, #ec4899, #0ea5e9) !important;
+    background-size: 300% 300% !important;
+    animation: headerMeshFlow 10s ease infinite !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important;
     padding: 7px 0 !important;
     font-size: 12.5px !important;
     color: #ffffff !important;
-    box-shadow: 0 2px 12px rgba(2, 132, 199, 0.25) !important;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35) !important;
+    position: relative;
+    z-index: 10;
 }
 
-@keyframes nextLevelTopSweep {
-    0% {
-        background-position: 0% 50%;
-    }
+.header-top::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: headerShimmer 4s linear infinite;
+    pointer-events: none;
+}
 
-    50% {
-        background-position: 100% 50%;
-    }
+@keyframes headerMeshFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-    100% {
-        background-position: 0% 50%;
-    }
+@keyframes headerShimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
 }
 
 .header-top #news-flash li {
     color: #ffffff !important;
     font-weight: 600 !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
 .header-top .header-info ul li,
@@ -1376,62 +1391,102 @@ body .main::after {
 .header-top .header-info-right ul li a {
     color: #ffffff !important;
     font-weight: 700 !important;
-    transition: color 0.25s ease, transform 0.2s ease !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     display: inline-block;
 }
 
 .header-top .header-info-right ul li a:hover {
     color: #fde047 !important;
-    transform: translateY(-1px);
+    transform: translateY(-1px) scale(1.02);
+    text-shadow: 0 0 12px rgba(253, 224, 71, 0.6);
 }
 
-/* ============================================================
-   HEADER MIDDLE — Rich Deep Royal Blue Gradient (NO WHITE)
-   ============================================================ */
+/* ── MIDDLE HEADER ── Deep Royal Blue + Animated Mesh ─────────── */
 .header-middle {
-    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3730a3 100%) !important;
-    border-bottom: 2px solid #60a5fa !important;
-    padding: 12px 0 !important;
+    background: linear-gradient(135deg, #0c1445 0%, #1e3a8a 30%, #1d4ed8 60%, #312e81 100%) !important;
+    border-bottom: none !important;
+    padding: 14px 0 !important;
     position: relative;
-    box-shadow: 0 4px 25px rgba(30, 58, 138, 0.4) !important;
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.5) !important;
+    overflow: hidden;
+}
+
+/* Animated mesh orb behind the header */
+.header-middle::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.35) 0%, rgba(168, 85, 247, 0.2) 40%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: orbFloat 8s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.header-middle::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(35px);
+    animation: orbFloat 10s ease-in-out infinite alternate-reverse;
+    pointer-events: none;
+}
+
+@keyframes orbFloat {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 20px) scale(1.15); }
 }
 
 .header-middle .header-wrap {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
 }
 
-/* ============================================================
-   LOGO — White Card Container for High Contrast Logo
-   ============================================================ */
+/* ── LOGO ── Elevated Glassmorphism Card ──────────────────────── */
 .header-middle .logo.logo-width-1 {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    padding: 6px 14px;
-    border-radius: 14px;
-    border: 2px solid #60a5fa;
-    background: #ffffff !important;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 7px 16px;
+    border-radius: 16px;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-middle .logo.logo-width-1:hover {
     border-color: #f59e0b;
-    box-shadow: 0 6px 24px rgba(245, 158, 11, 0.5);
-    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 40px rgba(245, 158, 11, 0.4),
+        0 0 0 1px rgba(245, 158, 11, 0.3),
+        0 0 40px rgba(245, 158, 11, 0.15);
+    transform: translateY(-3px);
 }
 
 .header-middle .logo.logo-width-1 a img {
     max-width: 260px !important;
     max-height: 68px !important;
     object-fit: contain;
-    transition: transform 0.35s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-middle .logo.logo-width-1 a img:hover {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
 /* Footer logo */
@@ -1445,9 +1500,7 @@ body .main::after {
     object-fit: contain;
 }
 
-/* ============================================================
-   SEARCH BOX — White Search Capsule on Blue Background
-   ============================================================ */
+/* ── SEARCH BOX ── Premium Glassmorphism Capsule ──────────────── */
 .search-style-1 {
     width: 100%;
     max-width: 550px;
@@ -1458,17 +1511,25 @@ body .main::after {
     position: relative;
     display: flex !important;
     align-items: center !important;
-    background: #ffffff !important;
-    border: 2px solid #f59e0b !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
     border-radius: 50px !important;
     padding: 3px 4px 3px 18px !important;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .search-style-1 form:focus-within {
     border-color: #fbbf24 !important;
-    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.35), 0 6px 22px rgba(0, 0, 0, 0.3) !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 
+        0 0 0 3px rgba(251, 191, 36, 0.3),
+        0 8px 30px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
 }
 
 .search-style-1 input,
@@ -1476,11 +1537,11 @@ body .main::after {
     flex: 1 !important;
     background: transparent !important;
     border: none !important;
-    color: #0f172a !important;
+    color: #ffffff !important;
     font-size: 13.5px !important;
     font-weight: 600 !important;
     width: 100% !important;
-    height: 38px !important;
+    height: 40px !important;
     outline: none !important;
     box-shadow: none !important;
     padding: 0 10px 0 0 !important;
@@ -1488,7 +1549,7 @@ body .main::after {
 
 .search-style-1 input::placeholder,
 .search-style-1 input[type="text"]::placeholder {
-    color: #64748b !important;
+    color: rgba(255, 255, 255, 0.6) !important;
     font-size: 13px !important;
     opacity: 1 !important;
 }
@@ -1502,22 +1563,22 @@ body .main::after {
     border: none !important;
     color: #ffffff !important;
     border-radius: 50px !important;
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
     flex-shrink: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     font-size: 15px !important;
     cursor: pointer !important;
-    box-shadow: 0 3px 10px rgba(245, 158, 11, 0.5) !important;
-    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.55) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .search-style-1 form button:hover {
-    transform: scale(1.08) !important;
-    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.75) !important;
+    transform: scale(1.1) rotate(5deg) !important;
+    box-shadow: 0 6px 22px rgba(245, 158, 11, 0.8) !important;
 }
 
 .search-style-1 form button i {
@@ -1526,9 +1587,7 @@ body .main::after {
     line-height: 1 !important;
 }
 
-/* ============================================================
-   CART ICON CAPSULE — Frosted Pill on Blue Background
-   ============================================================ */
+/* ── CART ICON ── Glassmorphism Circle with Pulse ─────────────── */
 .header-action-icon-2 {
     position: relative;
 }
@@ -1537,95 +1596,108 @@ body .main::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2) !important;
-    backdrop-filter: blur(8px) !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.14) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-action-icon-2>a.mini-cart-icon img {
     filter: brightness(0) invert(1) !important;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .header-action-icon-2>a.mini-cart-icon:hover {
-    background: #f59e0b !important;
+    background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%) !important;
     border-color: #f59e0b !important;
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
-    transform: translateY(-2px);
+    box-shadow: 
+        0 0 24px rgba(245, 158, 11, 0.6),
+        0 8px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px) scale(1.05);
 }
 
 .header-action-icon-2 .pro-count.blue {
     position: absolute;
-    top: -3px;
-    right: -3px;
+    top: -4px;
+    right: -4px;
     background: linear-gradient(135deg, #ef4444 0%, #f97316 100%) !important;
     color: #ffffff !important;
     font-weight: 800;
     font-size: 10px;
-    width: 19px;
-    height: 19px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.6);
-    border: 2px solid #ffffff;
+    box-shadow: 0 2px 10px rgba(239, 68, 68, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    animation: cartBadgePulse 2s ease-in-out infinite;
 }
 
-/* ============================================================
-   BOTTOM NAVIGATION — Solid Rich Royal Blue Bar (NO WHITE)
-   ============================================================ */
+@keyframes cartBadgePulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.15); }
+}
+
+/* ── BOTTOM NAV ── Matching Deep Blue with Gold Accents ───────── */
 .header-bottom,
 .header-bottom.header-bottom-bg-color {
-    background: linear-gradient(90deg, #1e3a8a 0%, #1d4ed8 50%, #312e81 100%) !important;
-    border-bottom: 2px solid #3b82f6 !important;
-    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.35) !important;
+    background: linear-gradient(90deg, #0c1445 0%, #1e3a8a 50%, #312e81 100%) !important;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, #0ea5e9, #6366f1, #a855f7, #ec4899) 1 !important;
+    box-shadow: 0 6px 24px rgba(12, 20, 69, 0.5) !important;
+    position: relative;
 }
 
 .header-bottom.sticky-bar {
-    background: rgba(30, 58, 138, 0.98) !important;
-    backdrop-filter: blur(16px) !important;
-    border-bottom: 2px solid #3b82f6 !important;
-    box-shadow: 0 4px 25px rgba(30, 58, 138, 0.45) !important;
+    background: rgba(12, 20, 69, 0.97) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, #0ea5e9, #6366f1, #a855f7, #ec4899) 1 !important;
+    box-shadow: 0 6px 30px rgba(12, 20, 69, 0.6) !important;
 }
 
-/* NAV LINKS — Crisp White Text with Glowing Gold Underline */
+/* ── NAV LINKS ── White Text + Gold Glow Underline ────────────── */
 .main-menu nav>ul>li {
     position: relative;
-    padding: 0 14px;
+    padding: 0 16px;
 }
 
 .main-menu nav>ul>li>a,
 .main-menu nav ul li a {
-    color: #ffffff !important;
+    color: #e0e7ff !important;
     font-weight: 700 !important;
     font-size: 14.5px !important;
-    padding: 14px 0 !important;
+    padding: 15px 0 !important;
     display: inline-block;
-    letter-spacing: 0.02em !important;
-    transition: color 0.25s ease !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     position: relative !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Glowing Gold underline indicator */
 .main-menu nav ul li a::after {
     content: '';
     position: absolute;
-    bottom: 8px;
+    bottom: 9px;
     left: 50%;
     transform: translateX(-50%) scaleX(0);
-    width: 80%;
+    width: 85%;
     height: 3px;
-    background: #fde047;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(253, 224, 71, 0.8);
-    transition: transform 0.25s ease;
+    box-shadow: 0 0 14px rgba(251, 191, 36, 0.9), 0 0 30px rgba(251, 191, 36, 0.4);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-menu nav ul li a:hover::after,
@@ -1636,6 +1708,7 @@ body .main::after {
 .main-menu nav ul li a:hover,
 .main-menu nav ul li a.active {
     color: #fde047 !important;
+    text-shadow: 0 0 16px rgba(253, 224, 71, 0.5);
 }
 
 /* Badge inside nav */
@@ -1646,12 +1719,10 @@ body .main::after {
 
 /* Sticky shadow override */
 .sticky-bar.stick {
-    box-shadow: 0 6px 25px rgba(30, 58, 138, 0.45) !important;
+    box-shadow: 0 8px 32px rgba(12, 20, 69, 0.6) !important;
 }
 
-/* ============================================================
-   HOTLINE HUD — Glowing Amber/Orange Button
-   ============================================================ */
+/* ── HOTLINE ── Animated Pulsing Amber Button ─────────────────── */
 .hotline {
     display: flex;
     align-items: center;
@@ -1659,20 +1730,29 @@ body .main::after {
 
 .hotline p {
     margin: 0;
-    padding: 7px 20px !important;
-    background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%) !important;
+    padding: 8px 22px !important;
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%) !important;
     border: none !important;
     border-radius: 50px !important;
     color: #ffffff !important;
     font-size: 12.5px !important;
     font-weight: 800 !important;
-    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.5) !important;
+    box-shadow: 
+        0 4px 18px rgba(245, 158, 11, 0.55),
+        0 0 40px rgba(245, 158, 11, 0.15) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    animation: hotlinePulse 3s ease-in-out infinite;
+}
+
+@keyframes hotlinePulse {
+    0%, 100% { box-shadow: 0 4px 18px rgba(245, 158, 11, 0.55), 0 0 0 0 rgba(245, 158, 11, 0.3); }
+    50%      { box-shadow: 0 4px 18px rgba(245, 158, 11, 0.55), 0 0 0 8px rgba(245, 158, 11, 0); }
 }
 
 .hotline p:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 22px rgba(245, 158, 11, 0.7) !important;
+    transform: translateY(-3px) scale(1.03) !important;
+    box-shadow: 0 8px 28px rgba(245, 158, 11, 0.7) !important;
+    animation: none;
 }
 
 .hotline p i {
