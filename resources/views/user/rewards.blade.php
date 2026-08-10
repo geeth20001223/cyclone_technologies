@@ -7,9 +7,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Community Rewards Hub - Share and claim exclusive rewards, promo codes, and deals at Cyclone Technologies.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="user/assets/imgs/theme/favicon.ico">
-    <link rel="stylesheet" href="user/assets/css/main.css">
-    <link rel="stylesheet" href="user/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/user/assets/imgs/theme/favicon.ico">
+    <link rel="stylesheet" href="/user/assets/css/main.css">
+    <link rel="stylesheet" href="/user/assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .rewards-hero {
             background: linear-gradient(135deg, #0d0d1a 0%, #16162a 50%, #0d0d1a 100%);

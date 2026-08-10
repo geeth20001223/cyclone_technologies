@@ -6,9 +6,9 @@
     <title>CYCLONE TECHNOLOGIES | Card Payment</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="user/assets/imgs/theme/favicon.ico">
-    <link rel="stylesheet" href="user/assets/css/main.css">
-    <link rel="stylesheet" href="user/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/user/assets/imgs/theme/favicon.ico">
+    <link rel="stylesheet" href="/user/assets/css/main.css">
+    <link rel="stylesheet" href="/user/assets/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 

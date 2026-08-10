@@ -6,9 +6,10 @@
     <title>CYCLONE TECHNOLOGIES | SMS Verification</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="user/assets/imgs/theme/favicon.ico">
-    <link rel="stylesheet" href="user/assets/css/main.css">
-    <link rel="stylesheet" href="user/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/user/assets/imgs/theme/favicon.ico">
+    <link rel="stylesheet" href="/user/assets/css/main.css">
+    <link rel="stylesheet" href="/user/assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>

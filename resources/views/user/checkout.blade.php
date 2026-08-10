@@ -11,9 +11,10 @@
     <meta property="og:type" content="">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="user/assets/imgs/theme/favicon.ico">
-    <link rel="stylesheet" href="user/assets/css/main.css">
-    <link rel="stylesheet" href="user/assets/css/custom.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/user/assets/imgs/theme/favicon.ico">
+    <link rel="stylesheet" href="/user/assets/css/main.css">
+    <link rel="stylesheet" href="/user/assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>

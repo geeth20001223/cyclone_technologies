@@ -2648,3 +2648,13 @@ body.mobile-menu-active .body-overlay-1 {
         margin-bottom: 20px !important;
     }
 }
+
+/* Icon Fallback & Render Compatibility */
+i[class^="fi-"], i[class*=" fi-"],
+.action-btn i, .action-btn span {
+    font-family: 'uicons-regular-straight', 'Font Awesome 6 Free', sans-serif !important;
+    font-style: normal !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
