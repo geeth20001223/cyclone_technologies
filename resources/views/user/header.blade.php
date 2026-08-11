@@ -49,9 +49,9 @@
                         </style>
                         <div id="news-flash" class="d-inline-block" style="margin-top: 2px;">
                             <ul>
-                                <li style="color: #ffffff;"><span class="badge-hot-deal" style="background: rgba(255, 255, 255, 0.22); backdrop-filter: blur(8px); color: #ffffff; border: 1px solid rgba(255,255,255,0.4); padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; margin-right: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">🔥 HOT DEAL</span> <span style="color: #ffffff; font-weight: 600;">Get premium gaming peripherals up to 50% off</span> <a href="{{route('user.shop')}}" style="color: #fde047; font-weight: 700; margin-left: 8px;">View details →</a></li>
-                                <li style="color: #ffffff;"><span class="badge-hot-deal" style="background: rgba(255, 255, 255, 0.22); backdrop-filter: blur(8px); color: #ffffff; border: 1px solid rgba(255,255,255,0.4); padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; margin-right: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">⚡ BUNDLES</span> <span style="color: #ffffff; font-weight: 600;">Build your dream PC - Save more with custom bundle deals</span></li>
-                                <li style="color: #ffffff;"><span class="badge-hot-deal" style="background: rgba(255, 255, 255, 0.22); backdrop-filter: blur(8px); color: #ffffff; border: 1px solid rgba(255,255,255,0.4); padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; margin-right: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">NEW ARRIVALS</span> <span style="color: #ffffff; font-weight: 600;">Latest GPUs & CPUs in stock, save up to 35% today</span> <a href="{{route('user.shop')}}" style="color: #fde047; font-weight: 700; margin-left: 8px;">Shop now →</a></li>
+                                <li style="color: #2563eb;"><span class="badge-hot-deal" style="background: #fff7ed; color: #f97316; border: 1px solid #fed7aa; padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; margin-right: 8px; box-shadow: 0 1px 4px rgba(249,115,22,0.15);">🔥 HOT DEAL</span> <span style="color: #2563eb; font-weight: 600;">Get premium gaming peripherals up to 50% off</span> <a href="{{route('user.shop')}}" style="color: #f97316; font-weight: 700; margin-left: 8px;">View details →</a></li>
+                                <li style="color: #2563eb;"><span class="badge-hot-deal" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; margin-right: 8px; box-shadow: 0 1px 4px rgba(37,99,235,0.15);">⚡ BUNDLES</span> <span style="color: #2563eb; font-weight: 600;">Build your dream PC - Save more with custom bundle deals</span></li>
+                                <li style="color: #2563eb;"><span class="badge-hot-deal" style="background: #fff7ed; color: #ea580c; border: 1px solid #fed7aa; padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; margin-right: 8px; box-shadow: 0 1px 4px rgba(249,115,22,0.15);">NEW ARRIVALS</span> <span style="color: #2563eb; font-weight: 600;">Latest GPUs & CPUs in stock, save up to 35% today</span> <a href="{{route('user.shop')}}" style="color: #f97316; font-weight: 700; margin-left: 8px;">Shop now →</a></li>
                             </ul>
                         </div>
                     </div>
@@ -62,14 +62,14 @@
                             @if (Route::has('login'))
                                 @auth
                                     <li>
-                                        <i class="fi-rs-user" style="margin-right: 5px; color: #fde047;"></i><a href="{{ route('user.account') }}" style="max-width: 180px; display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; font-weight: 700; color: #ffffff;">{{ Auth::user()->name }}</a>
+                                        <i class="fi-rs-user" style="margin-right: 5px; color: #f97316;"></i><a href="{{ route('user.account') }}" style="max-width: 180px; display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; font-weight: 700; color: #2563eb;">{{ Auth::user()->name }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('user.logout') }}" style="color: #fca5a5; font-weight: 700;">Logout</a>
+                                        <a href="{{ route('user.logout') }}" style="color: #f97316; font-weight: 700;">Logout</a>
                                     </li>
                                 @else
                                     <li>
-                                        <i class="fi-rs-key" style="color: #fde047; margin-right: 4px;"></i><a href="{{route('login')}}" style="font-weight: 700; color: #ffffff;">Log In</a> <span style="color: rgba(255,255,255,0.6); margin: 0 4px;">/</span> <a href="{{route('register')}}" style="font-weight: 700; color: #fde047;">Sign Up</a>
+                                        <i class="fi-rs-key" style="color: #f97316; margin-right: 4px;"></i><a href="{{route('login')}}" style="font-weight: 700; color: #f97316;">Log In</a> <span style="color: #94a3b8; margin: 0 4px;">/</span> <a href="{{route('register')}}" style="font-weight: 700; color: #2563eb;">Sign Up</a>
                                     </li>
                                 @endauth
                             @endif                              

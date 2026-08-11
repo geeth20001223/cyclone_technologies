@@ -57,10 +57,20 @@
                                                 <input type="text" required="" name="address" placeholder="Address">
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password" placeholder="Password">
+                                                <div class="password-input-wrapper">
+                                                    <input required="" type="password" name="password" id="register_password" placeholder="Password">
+                                                    <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility(this)" tabindex="-1" title="View password">
+                                                        <i class="fa-solid fa-eye-slash"></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password_confirmation" placeholder="Confirm password">
+                                                <div class="password-input-wrapper">
+                                                    <input required="" type="password" name="password_confirmation" id="register_password_confirmation" placeholder="Confirm password">
+                                                    <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility(this)" tabindex="-1" title="View password">
+                                                        <i class="fa-solid fa-eye-slash"></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-fill-out btn-block hover-up">Submit &amp; Register</button>

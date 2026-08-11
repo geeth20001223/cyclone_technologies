@@ -5,7 +5,7 @@
         <div class="single-hero-slider single-animation-wrap" style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);">
             <div class="container">
                 <div class="row align-items-center slider-animated-1" style="min-height: 380px;">
-                    <div class="col-lg-6 col-md-7">
+                    <div class="col-12 col-lg-6 col-md-7">
                         <div class="hero-slider-content-2" style="padding: 36px 0;">
                             <h4 class="animated" style="color: #f97316; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Upgrade Your Setup</h4>
                             <h2 class="animated fw-900" style="color: #ffffff; font-size: 2.5rem; margin-top: 8px;">Gaming PC Deals</h2>
@@ -16,9 +16,10 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-5 d-none d-md-block text-center">
+                    <div class="col-12 col-lg-6 col-md-5 text-center mt-3 mt-md-0 hero-slider-img-col">
                         <img src="user/assets/imgs/slider/slider-01.png"
                              alt="Gaming PC Setup"
+                             class="hero-slider-img"
                              style="max-width: 100%; max-height: 320px; width: auto; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); animation: slideInRight 0.8s ease-out;">
                     </div>
                 </div>
@@ -29,7 +30,7 @@
         <div class="single-hero-slider single-animation-wrap" style="background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);">
             <div class="container">
                 <div class="row align-items-center slider-animated-1" style="min-height: 380px;">
-                    <div class="col-lg-6 col-md-7">
+                    <div class="col-12 col-lg-6 col-md-7">
                         <div class="hero-slider-content-2" style="padding: 60px 0;">
                             <h4 class="animated" style="color: #22d3ee; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Latest Components</h4>
                             <h2 class="animated fw-900" style="color: #ffffff; font-size: 2.5rem; margin-top: 8px;">PC Hardware</h2>
@@ -40,9 +41,10 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-5 d-none d-md-block text-center">
+                    <div class="col-12 col-lg-6 col-md-5 text-center mt-3 mt-md-0 hero-slider-img-col">
                         <img src="user/assets/imgs/slider/slider-2.png"
                              alt="PC Components"
+                             class="hero-slider-img"
                              style="max-width: 100%; max-height: 460px; width: auto; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); animation: slideInRight 0.8s ease-out;">
                     </div>
                 </div>
@@ -59,4 +61,42 @@
     to   { opacity: 1; transform: translateX(0); }
 }
 .hero-slider-1 .slick-slide { overflow: hidden; }
+
+@media (max-width: 767px) {
+    .hero-slider-content-2 {
+        padding: 28px 15px 16px 15px !important;
+        text-align: center;
+    }
+    .hero-slider-content-2 h4 {
+        font-size: 0.95rem !important;
+        letter-spacing: 1.5px !important;
+        font-weight: 700 !important;
+    }
+    .hero-slider-content-2 h2 {
+        font-size: 1.85rem !important;
+        color: #ffffff !important;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+    }
+    .hero-slider-content-2 h1 {
+        font-size: 2.1rem !important;
+        margin-bottom: 12px !important;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+    }
+    .hero-slider-content-2 p {
+        font-size: 1rem !important;
+        color: #f1f5f9 !important;
+        margin-bottom: 20px !important;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.5) !important;
+    }
+    .hero-slider-img-col {
+        padding-bottom: 28px;
+    }
+    .hero-slider-img {
+        max-height: 220px !important;
+        margin: 0 auto;
+    }
+    .slider-animated-1 {
+        min-height: auto !important;
+    }
+}
 </style>

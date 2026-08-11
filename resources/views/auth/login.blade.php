@@ -52,7 +52,12 @@
                                                 <input type="text" required="" name="email" placeholder="Your Email">
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password" placeholder="Password">
+                                                <div class="password-input-wrapper">
+                                                    <input required="" type="password" name="password" id="password" placeholder="Password">
+                                                    <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility(this)" tabindex="-1" title="View password">
+                                                        <i class="fa-solid fa-eye-slash"></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                             <div class="login_footer form-group">
                                                 <div class="chek-form">

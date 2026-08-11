@@ -9,6 +9,8 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     protected $attributes = [
         'title' => '',
         'category' => '',

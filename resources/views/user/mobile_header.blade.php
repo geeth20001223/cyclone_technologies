@@ -47,22 +47,22 @@
                 @if (Route::has('login'))
                     @auth
                         <div class="single-mobile-header-info mt-10">
-                            <a href="{{ route('user.account') }}" style="color: #f59e0b; font-weight: 600;"><i class="fi-rs-user"></i> {{ Auth::user()->name }}</a>
+                            <a href="{{ route('user.account') }}" style="color: #2563eb; font-weight: 700;"><i class="fi-rs-user" style="color: #f97316;"></i> {{ Auth::user()->name }}</a>
                         </div>
                         <div class="single-mobile-header-info">
-                            <a href="{{ route('user.logout') }}" style="color: #f87171; font-weight: 600;">Logout</a>
+                            <a href="{{ route('user.logout') }}" style="color: #f97316; font-weight: 700;">Logout</a>
                         </div>
                     @else
                         <div class="single-mobile-header-info mt-10">
-                            <a href="{{route('login')}}"><i class="fi-rs-key"></i> Log In</a>
+                            <a href="{{route('login')}}" style="color: #f97316; font-weight: 700;"><i class="fi-rs-key" style="color: #f97316;"></i> Log In</a>
                         </div>
                         <div class="single-mobile-header-info">
-                            <a href="{{route('register')}}"><i class="fi-rs-user-add"></i> Sign Up</a>
+                            <a href="{{route('register')}}" style="color: #2563eb; font-weight: 700;"><i class="fi-rs-user-add" style="color: #2563eb;"></i> Sign Up</a>
                         </div>
                     @endauth
                 @endif
                 <div class="single-mobile-header-info">
-                    <a href="tel:+94715356253"><i class="fi-rs-smartphone"></i> +94 71 535 6253</a>
+                    <a href="tel:+94715356253" style="color: #2563eb; font-weight: 700;"><i class="fi-rs-smartphone" style="color: #f97316;"></i> +94 71 535 6253</a>
                 </div>
             </div>
             <div class="mobile-social-icon">
