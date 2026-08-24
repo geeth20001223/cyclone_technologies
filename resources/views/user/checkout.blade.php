@@ -90,9 +90,10 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="cart-action text-end">
-                            <a class="btn  mr-10 mb-sm-15" href="{{url('/stripe', $totalPrice)}}"><i class="fi-rs-shuffle mr-10"></i>Pay By Card</a>
-                            <a class="btn " href="{{url('/cash-order')}}"><i class="fi-rs-shopping-bag mr-10"></i>Cash On Delivery</a>
+                        <div class="cart-action text-end" style="display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap;">
+                            <a class="btn" href="{{url('/stripe', $totalPrice)}}" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border: none;"><i class="fi-rs-shuffle mr-10"></i>Pay By Card</a>
+                            <a class="btn" href="{{url('/paypal', $totalPrice)}}" style="background: linear-gradient(135deg, #0070ba, #003087); color: white; border: none;"><i class="fab fa-paypal mr-10" style="color: #ffc439;"></i>Pay via PayPal</a>
+                            <a class="btn" href="{{url('/cash-order')}}" style="background: linear-gradient(135deg, #10b981, #059669); color: white; border: none;"><i class="fi-rs-shopping-bag mr-10"></i>Cash On Delivery</a>
                         </div>
                         <div class="divider center_icon mt-50 mb-50"><i class="fi-rs-fingerprint"></i></div>
                     </div>

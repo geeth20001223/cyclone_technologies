@@ -54,12 +54,6 @@
         </div>
 
         <!-- METHOD 3: ACCOUNT PASSWORD CREDENTIALS -->
-        <style>
-            #verify_password_input::-ms-reveal,
-            #verify_password_input::-ms-clear {
-                display: none !important;
-            }
-        </style>
         <div style="margin-bottom: 16px; padding: 16px; background-color: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
             <div style="display: flex; align-items: center; margin-bottom: 10px;">
                 <span style="font-size: 1.5rem; margin-right: 10px;">🔑</span>
@@ -70,32 +64,20 @@
             </div>
             <form method="POST" action="{{ route('verify.password') }}" style="margin-top: 12px;">
                 @csrf
-                <div style="margin-bottom: 10px; position: relative;">
-                    <input type="password" name="password" id="verify_password_input" required autocomplete="current-password" placeholder="Enter Your Password (e.g. 12345678)" 
-                           style="display: block; width: 100%; padding: 10px 42px 10px 14px; border: 1.5px solid #a7f3d0; border-radius: 8px; font-size: 0.875rem; color: #1e293b; background-color: #ffffff; box-sizing: border-box;">
-                    <button type="button" onclick="toggleVerifyPassword()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #059669; cursor: pointer; font-size: 1.1rem;" title="Show/Hide Password">
-                        <span id="verify_eye_icon">👁️</span>
-                    </button>
+                <div style="margin-bottom: 10px;">
+                    <div class="password-input-wrapper">
+                        <input type="password" name="password" id="verify_password_input" required autocomplete="current-password" placeholder="Enter Your Password (e.g. 12345678)" 
+                               style="display: block; width: 100%; padding: 10px 42px 10px 14px; border: 1.5px solid #a7f3d0; border-radius: 8px; font-size: 0.875rem; color: #1e293b; background-color: #ffffff; box-sizing: border-box;">
+                        <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility(this)" tabindex="-1" title="View password">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </button>
+                    </div>
                 </div>
                 <button type="submit" style="display: block; width: 100%; padding: 10px 16px; background-color: #059669; color: #ffffff; border-radius: 8px; font-weight: 700; font-size: 0.875rem; text-align: center; border: none; cursor: pointer;">
                     Verify &amp; Enter System Immediately →
                 </button>
             </form>
         </div>
-
-        <script>
-        function toggleVerifyPassword() {
-            var input = document.getElementById('verify_password_input');
-            var icon = document.getElementById('verify_eye_icon');
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.innerHTML = '🙈';
-            } else {
-                input.type = 'password';
-                icon.innerHTML = '👁️';
-            }
-        }
-        </script>
 
         <div style="margin-top: 20px; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 12px;">
             <form method="POST" action="{{ route('logout') }}" style="display: inline;">

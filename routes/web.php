@@ -87,6 +87,8 @@ Route::get('/technology-news', [HomeController::class, 'GetTechnologyNews'])->na
 Route::get('/cash-order', [HomeController::class, 'CashOrder']);
 Route::get('/stripe/{totalPrice}', [HomeController::class, 'Stripe']);
 Route::post('/stripe/{totalPrice}', [HomeController::class, 'StripePost'])->name('stripe.post');
+Route::get('/paypal/{totalPrice}', [HomeController::class, 'Paypal'])->name('user.paypal');
+Route::post('/paypal/{totalPrice}', [HomeController::class, 'PaypalPost'])->name('paypal.post');
 
 /* Guest SMS OTP Login Routes & Direct Email Verification */
 Route::get('/email/verify/{id}/{hash}', [SmsVerificationController::class, 'verifyEmailDirect'])->middleware(['signed'])->name('verification.verify');

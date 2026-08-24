@@ -19,12 +19,59 @@
                             <strong>Email: </strong>shamal.geethanjanpathirana@gmail.com
                         </p>
                         <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
-                        <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
-                            <a href="#"><img src="user/assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                            <a href="#"><img src="user/assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                            <a href="#"><img src="user/assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                            <a href="#"><img src="user/assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                            <a href="#"><img src="user/assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                        <style>
+                            .colorful-social-icons {
+                                display: flex !important;
+                                align-items: center !important;
+                                gap: 10px !important;
+                                flex-wrap: wrap !important;
+                                margin-top: 12px !important;
+                            }
+                            .social-btn {
+                                display: inline-flex !important;
+                                align-items: center !important;
+                                justify-content: center !important;
+                                width: 38px !important;
+                                height: 38px !important;
+                                border-radius: 50% !important;
+                                color: #ffffff !important;
+                                font-size: 17px !important;
+                                text-decoration: none !important;
+                                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                                box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+                            }
+                            .social-btn:hover {
+                                transform: translateY(-4px) scale(1.12) !important;
+                                box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
+                                color: #ffffff !important;
+                            }
+                            .social-btn.facebook {
+                                background: #1877F2 !important;
+                            }
+                            .social-btn.twitter {
+                                background: #1DA1F2 !important;
+                            }
+                            .social-btn.instagram {
+                                background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+                            }
+                            .social-btn.pinterest {
+                                background: #E60023 !important;
+                            }
+                            .social-btn.youtube {
+                                background: #FF0000 !important;
+                            }
+                            .social-btn.whatsapp {
+                                background: #25D366 !important;
+                            }
+                        </style>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+                        <div class="colorful-social-icons wow fadeIn animated mb-sm-5 mb-md-0">
+                            <a href="https://facebook.com" target="_blank" class="social-btn facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank" class="social-btn twitter" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://instagram.com" target="_blank" class="social-btn instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://pinterest.com" target="_blank" class="social-btn pinterest" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                            <a href="https://youtube.com" target="_blank" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://wa.me/94715356253" target="_blank" class="social-btn whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>

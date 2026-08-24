@@ -73,10 +73,14 @@
             </div>
             <div class="mobile-social-icon">
                 <h5 class="mb-15 text-grey-4">Follow Us</h5>
-                <a href="#"><img src="user/assets/imgs/theme/icons/icon-facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="user/assets/imgs/theme/icons/icon-twitter.svg" alt="Twitter"></a>
-                <a href="#"><img src="user/assets/imgs/theme/icons/icon-instagram.svg" alt="Instagram"></a>
-                <a href="#"><img src="user/assets/imgs/theme/icons/icon-youtube.svg" alt="YouTube"></a>
+                <div class="colorful-social-icons">
+                    <a href="https://facebook.com" target="_blank" class="social-btn facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="social-btn twitter" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-btn instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://pinterest.com" target="_blank" class="social-btn pinterest" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="https://youtube.com" target="_blank" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://wa.me/94715356253" target="_blank" class="social-btn whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
         </div>
     </div>

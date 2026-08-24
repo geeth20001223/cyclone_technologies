@@ -514,6 +514,54 @@ class HomeController extends Controller
         }
     }
 
+    public function Paypal($totalPrice)
+    {
+        if(Auth::check()){
+            return view('user.paypal', compact('totalPrice'));
+        }else{
+            return redirect('login');
+        }
+    }
+
+    public function PaypalPost(Request $request, $totalPrice)
+    {
+        if(Auth::check()){
+            $user = Auth::user();
+            $user_id = (string) $user->id;
+            $cartData = Cart::where('user_id', '=', $user_id)->get();
+
+            foreach ($cartData as $data) {
+                $order = new Order();
+                $order->user_id = (string) $data->user_id;
+                $order->name = $data->name;
+                $order->email = $data->email;
+                $order->phone = $data->phone;
+                $order->address = $data->address;
+                $order->product_title = $data->product_title;
+                $order->product_id = $data->product_id;
+                $order->quantity = $data->quantity;
+                $order->price = $data->price;
+                $order->image = $data->image;
+                $order->tracking_id = 'TRK' . Str::limit(uniqid('', true), 15 - strlen('TRK'), '');
+                $order->delivery_status = 'pending';
+                $order->payment_status = 'paid';
+                $order->save();
+
+                $cart = Cart::find($data->id);
+                if ($cart) {
+                    $cart->delete();
+                }
+            }
+
+            Session::flash('success', 'PayPal Payment successful!');
+            Alert::success('PayPal Payment Successfully Done! 🅿️', 'Your order has been received via PayPal Sandbox.');
+
+            return redirect()->route('user.orders');
+        }else{
+            return redirect('login');
+        }
+    }
+
     public function SearchProduct(Request $request)
     {
         $searchText = trim($request->search ?? '');

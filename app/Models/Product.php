@@ -14,25 +14,11 @@ class Product extends Model
     protected $attributes = [
         'title' => '',
         'category' => '',
-        'quantity' => 0,
+        'quantity' => '0',
         'price' => '0',
         'discount_price' => '0',
         'image' => '',
-        'screen_size' => '',
-        'screen_resolution' => '',
-        'screen_refresh_rate' => '',
-        'device_weight' => '',
-        'graphics_type' => '',
-        'graphics_card_memory' => '',
-        'ssd_capacity' => '',
-        'operating_system' => '',
-        'processor' => '',
-        'processor_generation' => '',
-        'processor_type' => '',
-        'processor_speed' => '',
-        'ram' => '',
-        'keyboard' => '',
-        'color' => '',
+        'description' => '',
     ];
 
     public function user()
