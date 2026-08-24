@@ -46,11 +46,19 @@ services:
       - key: QUEUE_CONNECTION
         value: sync
       - key: MAIL_MAILER
-        value: resend
-      - key: RESEND_API_KEY
-        value: re_SJwL1V5j_2Jr3H2dJFAwzahn6rfuEcxmx
+        value: smtp
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: "587"
+      - key: MAIL_USERNAME
+        value: "shamal.geethanjanpathirana@gmail.com"
+      - key: MAIL_PASSWORD
+        value: "okkrjlqslfpfnute"
+      - key: MAIL_ENCRYPTION
+        value: tls
       - key: MAIL_FROM_ADDRESS
-        value: "onboarding@resend.dev"
+        value: "shamal.geethanjanpathirana@gmail.com"
       - key: MAIL_FROM_NAME
         value: "CYCLONE TECHNOLOGIES"
       - key: SUPABASE_URL
