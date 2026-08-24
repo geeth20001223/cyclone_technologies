@@ -32,6 +32,20 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
+        // Case-insensitive & trimmed login authentication callback
+        Fortify::authenticateUsing(function (Request $request) {
+            $loginInput = strtolower(trim($request->email));
+            $user = \App\Models\User::whereRaw('LOWER(email) = ?', [$loginInput])
+                ->orWhere('phone', trim($request->email))
+                ->first();
+
+            if ($user && \Illuminate\Support\Facades\Hash::check($request->password, $user->password)) {
+                return $user;
+            }
+
+            return null;
+        });
+
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
 
