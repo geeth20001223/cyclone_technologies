@@ -34,5 +34,14 @@ class AppServiceProvider extends ServiceProvider
                 @touch($sqlitePath);
             }
         }
+
+        // Auto-run migrations if core tables (e.g. categories) do not exist yet
+        try {
+            if (!\Illuminate\Support\Facades\Schema::hasTable('categories')) {
+                \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+            }
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Auto migration error: ' . $e->getMessage());
+        }
     }
 }
