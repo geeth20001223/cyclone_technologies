@@ -14,6 +14,13 @@
             </div>
         @endif
 
+        <div class="mt-4 pt-4 border-t border-gray-200 text-center">
+            <p class="text-sm text-gray-500 mb-2">Can't access your email inbox?</p>
+            <a href="{{ route('sms.verify') }}" class="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-lg text-sm hover:from-amber-600 hover:to-orange-600 shadow transition">
+                📱 Verify via Mobile SMS (Twilio OTP) →
+            </a>
+        </div>
+
         <div class="mt-4 flex items-center justify-between">
             <form method="POST" action="{{ route('verification.send') }}">
                 @csrf
