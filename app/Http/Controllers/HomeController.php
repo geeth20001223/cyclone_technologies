@@ -35,7 +35,7 @@ class HomeController extends Controller
             if (!is_null(Auth::user()->sms_code) && is_null(Auth::user()->sms_verified_at) && Auth::user()->usertype == 0) {
                 return redirect()->route('sms.verify');
             }
-            $user_id = Auth::user()->id;
+            $user_id = (string) Auth::user()->id;
             $cartData = Cart::where('user_id', '=', $user_id)->get();
             return view('user.index', compact('products', 'categories', 'cartData'));
         }else{
@@ -88,7 +88,7 @@ class HomeController extends Controller
             /* Regular User */
             $categories = Category::all();
             $products = Product::all();
-            $user_id = Auth::user()->id;
+            $user_id = (string) Auth::user()->id;
             $cartData = Cart::where('user_id', '=', $user_id)->get();
             return view('user.index', compact('products', 'categories','cartData'));
             
@@ -102,11 +102,11 @@ class HomeController extends Controller
             $userType = Auth::user()->usertype;
             if ($userType == 0) {
                 $user = Auth::user();
-                $cartData = Cart::where('user_id', '=', $user->id)->get();
+                $cartData = Cart::where('user_id', '=', (string) $user->id)->get();
                 $categories = Category::all();
                 $user_products = Product::where('user_id', $user->id)->get();
                 $sold_orders = Order::whereIn('product_id', $user_products->pluck('id'))->latest()->get();
-                $bought_orders = Order::where('user_id', $user->id)->latest()->get();
+                $bought_orders = Order::where('user_id', (string) $user->id)->latest()->get();
                 $user_categories = Category::where('user_id', $user->id)->get();
                 return view('user.my-account', compact('user', 'cartData', 'categories', 'user_products', 'sold_orders', 'bought_orders', 'user_categories'));
             } else {
@@ -134,7 +134,7 @@ class HomeController extends Controller
 
         // check if a user is logged in
         if(Auth::check()){
-            $user_id = Auth::user()->id;
+            $user_id = (string) Auth::user()->id;
             $cartData = Cart::where('user_id', '=', $user_id)->get();
             return view('user.product_details', compact('product', 'cartData'));
         }else{
@@ -148,7 +148,7 @@ class HomeController extends Controller
         $products = Product::all();
         // check if a user is logged in
         if(Auth::check()){
-            $user_id = Auth::user()->id;
+            $user_id = (string) Auth::user()->id;
             $cartData = Cart::where('user_id', '=', $user_id)->get();
             return view('user.shop', compact('products', 'categories', 'cartData'));
         }else{
@@ -161,7 +161,7 @@ class HomeController extends Controller
     {
         $cartData = collect();
         if(Auth::check()){
-            $user_id = Auth::user()->id;
+            $user_id = (string) Auth::user()->id;
             $cartData = Cart::where('user_id', '=', $user_id)->get();
         }
         return view('user.contact', compact('cartData'));
@@ -233,7 +233,7 @@ class HomeController extends Controller
                 $unitPrice = floatval(preg_replace('/[^0-9.]/', '', $rawPrice));
                 $addedTotalPrice = $unitPrice * intval($request->quantity);
 
-                $cart = Cart::where('product_id', $product->id)->where('user_id', $user->id)->first();
+                $cart = Cart::where('product_id', $product->id)->where('user_id', (string) $user->id)->first();
                 if ($cart) {
                     // if the cart record exists, update the quantity and price columns
                     $cart->quantity += $request->quantity;
@@ -242,7 +242,7 @@ class HomeController extends Controller
                 } else {
 
                     $cart = new Cart();
-                    $cart->user_id = $user->id;
+                    $cart->user_id = (string) $user->id;
                     $cart->name = $user->name;
                     $cart->email = $user->email;
                     $cart->phone = $user->phone;
@@ -284,7 +284,7 @@ class HomeController extends Controller
     public function CartPage()
     {
         if(Auth::check()){
-            $user_id = Auth::user()->id;
+            $user_id = (string) Auth::user()->id;
             $cartData = Cart::where('user_id', '=', $user_id)->get();
             return view('user.cart', compact('cartData'));
         }else{
@@ -321,7 +321,7 @@ class HomeController extends Controller
     public function ClearCart()
     {
         if (Auth::check()) {
-            Cart::where('user_id', Auth::id())->delete();
+            Cart::where('user_id', (string) Auth::id())->delete();
             return redirect()->back()->with('success', 'Cart cleared successfully!');
         } else {
             return redirect('login');
@@ -331,7 +331,7 @@ class HomeController extends Controller
     public function Checkout()
     {
         if(Auth::check()){
-            $user_id = Auth::user()->id;
+            $user_id = (string) Auth::user()->id;
             $cartData = Cart::where('user_id', '=', $user_id)->get();
             return view('user.checkout', compact('cartData'));
         }else{
@@ -344,13 +344,13 @@ class HomeController extends Controller
         if(Auth::check()){
 
             $user = Auth::user();
-            $user_id = $user->id;
+            $user_id = (string) $user->id;
             $cartData = Cart::where('user_id','=',$user_id)->get();
 
             foreach($cartData as $data){
 
                 $order = new Order();
-                $order->user_id = $data->user_id;
+                $order->user_id = (string) $data->user_id;
                 $order->name = $data->name;
                 $order->email = $data->email;
                 $order->phone = $data->phone;
@@ -383,7 +383,7 @@ class HomeController extends Controller
     public function UserOrders()
     {
         if (Auth::check()) {
-            $user_id = Auth::user()->id;
+            $user_id = (string) Auth::user()->id;
             $cartData = Cart::where('user_id', '=', $user_id)->get();
             $orderData = Order::where('user_id', '=', $user_id)->where('delivery_status', '<>', 'passive_order')->get();
             $past_orders = Order::where('user_id', '=', $user_id)->where('delivery_status', '=', 'passive_order')->get();

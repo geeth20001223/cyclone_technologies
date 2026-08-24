@@ -22,7 +22,7 @@ class MessageController extends Controller
         $userId = Auth::id();
         
         // Fetch active cart items for the header counter
-        $cartData = Cart::where('user_id', '=', $userId)->get();
+        $cartData = Cart::where('user_id', '=', (string) $userId)->get();
 
         // Get all unique users the current user has chatted with
         $senderIds = Message::where('receiver_id', $userId)->pluck('sender_id')->toArray();
