@@ -79,7 +79,8 @@ return [
             'search_path' => 'public',
             'sslmode' => 'prefer',
             'options' => [
-                PDO::ATTR_TIMEOUT => 10,
+                PDO::ATTR_TIMEOUT => 5,
+                PDO::ATTR_PERSISTENT => true,
             ],
         ],
 

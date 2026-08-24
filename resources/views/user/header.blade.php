@@ -212,7 +212,9 @@
                                 @if (Route::has('login'))
                                     @auth
                                         @php
-                                            $unreadMessagesCount = \App\Models\Message::where('receiver_id', Auth::id())->where('is_read', false)->count();
+                                            $unreadMessagesCount = \Illuminate\Support\Facades\Cache::remember('unread_msg_' . Auth::id(), 10, function () {
+                                                return \App\Models\Message::where('receiver_id', Auth::id())->where('is_read', false)->count();
+                                            });
                                         @endphp
                                         <li><a class="{{ request()->routeIs('messages.inbox') ? 'active' : '' }}" href="{{route('messages.inbox')}}">Messages @if($unreadMessagesCount > 0) <span class="nav-unread-badge">{{ $unreadMessagesCount }}</span> @endif</a></li>
                                         <li><a href="{{route('user.account')}}">My Account<i class="fi-rs-angle-down"></i></a>

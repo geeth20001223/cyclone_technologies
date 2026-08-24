@@ -28,14 +28,20 @@
                         <li><a href="{{route('user.contact')}}">Contact</a></li>
                         @auth
                             @php
-                                $unreadMessagesCount = \App\Models\Message::where('receiver_id', Auth::id())->where('is_read', false)->count();
+                                $unreadMessagesCount = \Illuminate\Support\Facades\Cache::remember('unread_msg_' . Auth::id(), 10, function () {
+                                    return \App\Models\Message::where('receiver_id', Auth::id())->where('is_read', false)->count();
+                                });
                             @endphp
                             <li><a href="{{route('messages.inbox')}}">Messages @if($unreadMessagesCount > 0) <span class="nav-unread-badge">{{ $unreadMessagesCount }}</span> @endif</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="{{route('user.account')}}">My Account</a>
                                 <ul class="dropdown">
                                     <li><a href="{{route('user.account')}}">Dashboard</a></li>
-                                    <li><a href="{{url('/orders')}}">Orders</a></li>
+                                    <li><a href="{{route('user.account')}}#my-orders">My Orders</a></li>
+                                    <li><a href="{{route('user.account')}}#account-detail">Edit Profile</a></li>
+                                    <li><a href="{{route('user.account')}}#add-product">Add Product to Sell</a></li>
+                                    <li><a href="{{route('user.account')}}#my-products">My Products</a></li>
                                     <li><a href="{{route('user.cart')}}">Cart</a></li>
+                                    <li><a href="{{route('user.logout')}}">Logout</a></li>
                                 </ul>
                             </li>
                         @endauth
