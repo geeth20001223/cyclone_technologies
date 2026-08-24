@@ -919,4 +919,60 @@ class HomeController extends Controller
 
         return redirect()->back();
     }
+
+    public function updateProfile(Request $request)
+    {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+        $user = Auth::user();
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            'phone' => 'required|string|max:30',
+            'address' => 'nullable|string|max:500',
+            'password' => 'nullable|string|min:8|confirmed',
+        ]);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+
+        if ($request->filled('password')) {
+            $user->password = \Illuminate\Support\Facades\Hash::make($request->password);
+        }
+
+        $user->save();
+
+        Alert::success('Profile Updated', 'Your profile details have been updated successfully.');
+        return redirect()->back();
+    }
+
+    public function deleteOwnAccount(Request $request)
+    {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+        $user = Auth::user();
+
+        // Remove user's products, categories, cart items
+        Product::where('user_id', $user->id)->delete();
+        Category::where('user_id', $user->id)->delete();
+        Cart::where('user_id', $user->id)->delete();
+
+        // Logout user
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        // Delete user record
+        $user->delete();
+
+        Alert::success('Account Deleted', 'Your account has been deleted successfully.');
+        return redirect('/');
+    }
 }

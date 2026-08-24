@@ -133,28 +133,66 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h5>Account Details</h5>
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h5 class="mb-0 font-weight-bold"><i class="fi-rs-user mr-10 text-primary"></i> Edit Profile Details</h5>
                                             </div>
                                             <div class="card-body">
-                                                <div class="row">
-                                                    <div class="form-group col-md-12">
-                                                        <label>Name <span class="required">*</span></label>
-                                                        <input required="" class="form-control square" value="{{$user->name}}"  name="name" type="text">
+                                                <form action="{{ route('user.update_profile') }}" method="POST">
+                                                    @csrf
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6 mb-3">
+                                                            <label class="font-weight-bold">Full Name <span class="required text-danger">*</span></label>
+                                                            <input required class="form-control square" value="{{$user->name}}" name="name" type="text" placeholder="Enter your full name">
+                                                        </div>
+                                                        <div class="form-group col-md-6 mb-3">
+                                                            <label class="font-weight-bold">Email Address <span class="required text-danger">*</span></label>
+                                                            <input required class="form-control square" value="{{$user->email}}" name="email" type="email" placeholder="Enter your email">
+                                                        </div>
+                                                        <div class="form-group col-md-6 mb-3">
+                                                            <label class="font-weight-bold">Mobile Phone Number <span class="required text-danger">*</span></label>
+                                                            <input required class="form-control square" value="{{$user->phone}}" name="phone" type="text" placeholder="e.g. +94715356253">
+                                                        </div>
+                                                        <div class="form-group col-md-6 mb-3">
+                                                            <label class="font-weight-bold">Shipping Address</label>
+                                                            <input class="form-control square" value="{{$user->address}}" name="address" type="text" placeholder="Enter your shipping address">
+                                                        </div>
+
+                                                        <h6 class="mt-3 mb-3 text-muted">Change Password (leave blank to keep current)</h6>
+                                                        <div class="form-group col-md-6 mb-3">
+                                                            <label>New Password</label>
+                                                            <input class="form-control square" name="password" type="password" placeholder="Min 8 characters">
+                                                        </div>
+                                                        <div class="form-group col-md-6 mb-3">
+                                                            <label>Confirm New Password</label>
+                                                            <input class="form-control square" name="password_confirmation" type="password" placeholder="Confirm new password">
+                                                        </div>
+
+                                                        <div class="col-md-12 mt-3">
+                                                            <button type="submit" class="btn btn-fill-out btn-block hover-up" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; font-weight: 700; border: none; border-radius: 50px;">
+                                                                Save Profile Changes
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group col-md-12">
-                                                        <label>Email Address <span class="required">*</span></label>
-                                                        <input required="" class="form-control square" value="{{$user->email}}" name="email" type="email">
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <label>Address <span class="required">*</span></label>
-                                                        <input required="" class="form-control square" value="{{$user->address}}" name="address" type="text">
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <a  class="btn btn-fill-out submit" href="{{url('/user/profile')}}">Update</a>
-                                                    </div>
-                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!-- Danger Zone: Delete Account -->
+                                        <div class="card border-danger mt-4" style="border: 2px solid #ef4444 !important; border-radius: 10px;">
+                                            <div class="card-header bg-danger text-white" style="background-color: #ef4444 !important;">
+                                                <h5 class="mb-0 text-white font-weight-bold"><i class="fi-rs-trash mr-10"></i> Danger Zone — Delete Account</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="text-muted small mb-3">
+                                                    Permanently delete your account and all associated products, sales, and order data. This action cannot be undone.
+                                                </p>
+                                                <form action="{{ route('user.delete_account') }}" method="POST" onsubmit="return confirm('⚠️ Are you sure you want to permanently delete your account? All your products and data will be removed forever!');">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger btn-sm font-weight-bold" style="border-radius: 20px; background-color: #dc2626; border: none;">
+                                                        🗑️ Delete My Account Permanently
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

@@ -105,5 +105,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/messages/sync', [MessageController::class, 'sync'])->name('messages.sync');
     Route::post('/messages/send', [MessageController::class, 'sendMessage'])->name('messages.send');
     Route::get('/messages/start/{productId}', [MessageController::class, 'startChat'])->name('messages.start');
+    Route::post('/user/update-profile', [HomeController::class, 'updateProfile'])->name('user.update_profile');
+    Route::post('/user/delete-account', [HomeController::class, 'deleteOwnAccount'])->name('user.delete_account');
     Route::post('/seller/review', [HomeController::class, 'storeSellerReview'])->name('seller.review');
 });
