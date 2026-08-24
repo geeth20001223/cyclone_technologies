@@ -19,6 +19,12 @@ chmod -R 775 storage bootstrap/cache
 # Create storage link if missing
 php artisan storage:link --force || true
 
+# Copy Render production env if present
+if [ -f .env.render ]; then
+    echo "Applying Render production environment (.env.render)..."
+    cp .env.render .env
+fi
+
 # Optimize Laravel for Production
 echo "Optimizing Laravel configuration and routes..."
 php artisan config:cache || true
