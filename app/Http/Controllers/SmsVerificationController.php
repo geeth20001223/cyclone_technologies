@@ -14,7 +14,21 @@ class SmsVerificationController extends Controller
         $user = Auth::user();
 
         if ($user && $user->sms_verified_at) {
-            return redirect('/');
+            return redirect('/home');
+        }
+
+        // If user has no sms_code generated yet, generate one now
+        if ($user && empty($user->sms_code)) {
+            $code = (string) rand(100000, 999999);
+            $user->sms_code = $code;
+            $user->save();
+
+            try {
+                $message = "Your Cyclone Technologies verification code is: {$code}";
+                TwilioService::sendSms($user->phone ?? '', $message);
+            } catch (\Exception $e) {
+                \Illuminate\Support\Facades\Log::error('Auto SMS code generation error: ' . $e->getMessage());
+            }
         }
 
         return view('auth.verify-sms', compact('user'));
@@ -23,7 +37,7 @@ class SmsVerificationController extends Controller
     public function verifySms(Request $request)
     {
         $request->validate([
-            'code' => 'required|string|max:10',
+            'code' => 'required|string|max:20',
         ]);
 
         $user = Auth::user();
@@ -32,15 +46,20 @@ class SmsVerificationController extends Controller
             return redirect('login');
         }
 
-        if (trim($request->code) == trim($user->sms_code)) {
+        // Clean user input code (strip any accidental spaces, dashes)
+        $inputCode = preg_replace('/[^0-9]/', '', (string) $request->code);
+        $savedCode = preg_replace('/[^0-9]/', '', (string) $user->sms_code);
+
+        if (!empty($savedCode) && $inputCode === $savedCode) {
             $user->sms_verified_at = now();
+            $user->email_verified_at = $user->email_verified_at ?? now();
             $user->save();
 
             Alert::success('Verified!', 'Mobile number verified successfully.');
-            return redirect('/');
+            return redirect('/home');
         }
 
-        Alert::error('Verification Failed', 'Invalid SMS code. Please check your phone and try again.');
+        Alert::error('Verification Failed', 'Invalid SMS code. Please check your code and try again.');
         return redirect()->back()->withErrors(['code' => 'Invalid SMS code.']);
     }
 
@@ -57,7 +76,11 @@ class SmsVerificationController extends Controller
         $user->save();
 
         $message = "Your new Cyclone Technologies verification code is: {$newCode}";
-        TwilioService::sendSms($user->phone ?? '', $message);
+        try {
+            TwilioService::sendSms($user->phone ?? '', $message);
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Resend SMS error: ' . $e->getMessage());
+        }
 
         Alert::success('Code Sent!', 'A new SMS verification code has been sent to your mobile number.');
         return redirect()->back();
@@ -93,7 +116,11 @@ class SmsVerificationController extends Controller
         $user->save();
 
         $message = "Your Cyclone Technologies login OTP is: {$otp}";
-        TwilioService::sendSms($user->phone ?? '', $message);
+        try {
+            TwilioService::sendSms($user->phone ?? '', $message);
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Send SMS OTP error: ' . $e->getMessage());
+        }
 
         session(['sms_login_user_id' => $user->id]);
 
@@ -169,6 +196,7 @@ class SmsVerificationController extends Controller
 
         if (\Illuminate\Support\Facades\Hash::check($request->password, $user->password)) {
             $user->email_verified_at = now();
+            $user->sms_verified_at = now();
             $user->save();
 
             Alert::success('Account Verified!', 'Your account has been verified using your credentials.');

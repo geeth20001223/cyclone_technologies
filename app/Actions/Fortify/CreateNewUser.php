@@ -41,9 +41,13 @@ class CreateNewUser implements CreatesNewUsers
             'sms_verified_at' => null,
         ]);
 
-        // Send SMS via Twilio
-        $message = "Your Cyclone Technologies verification code is: {$smsCode}";
-        TwilioService::sendSms($input['phone'], $message);
+        // Send SMS via Twilio safely
+        try {
+            $message = "Your Cyclone Technologies verification code is: {$smsCode}";
+            TwilioService::sendSms($input['phone'], $message);
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Registration Twilio SMS error: ' . $e->getMessage());
+        }
 
         return $user;
     }

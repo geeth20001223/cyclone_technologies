@@ -169,30 +169,30 @@
                                                         </div>
 
                                                         <div class="col-md-12 mt-3">
-                                                            <button type="submit" class="btn btn-fill-out btn-block hover-up" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; font-weight: 700; border: none; border-radius: 50px;">
+                                                            <button type="submit" class="btn btn-fill-out hover-up" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; font-weight: 700; border: none; border-radius: 50px; padding: 12px 30px;">
                                                                 Save Profile Changes
                                                             </button>
                                                         </div>
                                                     </div>
                                                 </form>
-                                            </div>
-                                        </div>
 
-                                        <!-- Danger Zone: Delete Account -->
-                                        <div class="card border-danger mt-4" style="border: 2px solid #ef4444 !important; border-radius: 10px;">
-                                            <div class="card-header bg-danger text-white" style="background-color: #ef4444 !important;">
-                                                <h5 class="mb-0 text-white font-weight-bold"><i class="fi-rs-trash mr-10"></i> Danger Zone — Delete Account</h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p class="text-muted small mb-3">
-                                                    Permanently delete your account and all associated products, sales, and order data. This action cannot be undone.
-                                                </p>
-                                                <form action="{{ route('user.delete_account') }}" method="POST" onsubmit="return confirm('⚠️ Are you sure you want to permanently delete your account? All your products and data will be removed forever!');">
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-danger btn-sm font-weight-bold" style="border-radius: 20px; background-color: #dc2626; border: none;">
-                                                        🗑️ Delete My Account Permanently
-                                                    </button>
-                                                </form>
+                                                <!-- DANGER ZONE: DELETE ACCOUNT -->
+                                                <div class="mt-4 pt-3 border-top">
+                                                    <div style="background: #fef2f2; border: 1.5px solid #fca5a5; border-radius: 12px; padding: 16px;">
+                                                        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                                                            <div>
+                                                                <h6 style="color: #991b1b; font-weight: 800; margin: 0;">⚠️ Danger Zone — Delete Account</h6>
+                                                                <small style="color: #b91c1c; font-weight: 600;">Permanently remove your profile, listed products, categories, and account data.</small>
+                                                            </div>
+                                                            <form action="{{ route('user.delete_account') }}" method="POST" onsubmit="return confirm('⚠️ Are you absolutely sure you want to PERMANENTLY DELETE your account? All your products, categories, and data will be permanently erased. This action CANNOT be undone!');">
+                                                                @csrf
+                                                                <button type="submit" class="btn btn-danger hover-up" style="background: linear-gradient(135deg, #dc2626, #991b1b); color: #ffffff; font-weight: 800; border: none; border-radius: 50px; padding: 10px 24px; box-shadow: 0 4px 12px rgba(220,38,38,0.3);">
+                                                                    🗑️ Delete My Account
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

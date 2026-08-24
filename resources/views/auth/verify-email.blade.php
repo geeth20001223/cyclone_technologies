@@ -37,23 +37,29 @@
             </form>
         </div>
 
-        <!-- METHOD 2: MOBILE SMS OTP (TWILIO) -->
+        <!-- METHOD 2: MOBILE SMS OTP -->
         <div style="margin-bottom: 16px; padding: 16px; background-color: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
             <div style="display: flex; align-items: center; margin-bottom: 10px;">
                 <span style="font-size: 1.5rem; margin-right: 10px;">📱</span>
                 <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 700; color: #78350f; margin: 0;">Method 2: Mobile SMS OTP Code</h4>
-                    <p style="font-size: 0.8rem; color: #92400e; margin: 2px 0 0 0;">Receive a 6-digit SMS code on your phone via Twilio.</p>
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: #92400e; margin: 0;">Method 2: Mobile SMS OTP Code</h4>
+                    <p style="font-size: 0.8rem; color: #92400e; margin: 2px 0 0 0;">Receive a 6-digit SMS code on your mobile phone.</p>
                 </div>
             </div>
             <div style="margin-top: 12px;">
                 <a href="{{ route('sms.verify') }}" style="display: block; width: 100%; padding: 10px 16px; background: linear-gradient(135deg, #d97706, #ea580c); color: #ffffff; border-radius: 8px; font-weight: 700; font-size: 0.875rem; text-align: center; text-decoration: none; border: none; box-sizing: border-box;">
-                    Verify via Mobile SMS (Twilio OTP) →
+                    Verify via Mobile SMS OTP →
                 </a>
             </div>
         </div>
 
         <!-- METHOD 3: ACCOUNT PASSWORD CREDENTIALS -->
+        <style>
+            #verify_password_input::-ms-reveal,
+            #verify_password_input::-ms-clear {
+                display: none !important;
+            }
+        </style>
         <div style="margin-bottom: 16px; padding: 16px; background-color: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
             <div style="display: flex; align-items: center; margin-bottom: 10px;">
                 <span style="font-size: 1.5rem; margin-right: 10px;">🔑</span>
@@ -68,7 +74,7 @@
                     <input type="password" name="password" id="verify_password_input" required autocomplete="current-password" placeholder="Enter Your Password (e.g. 12345678)" 
                            style="display: block; width: 100%; padding: 10px 42px 10px 14px; border: 1.5px solid #a7f3d0; border-radius: 8px; font-size: 0.875rem; color: #1e293b; background-color: #ffffff; box-sizing: border-box;">
                     <button type="button" onclick="toggleVerifyPassword()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #059669; cursor: pointer; font-size: 1.1rem;" title="Show/Hide Password">
-                        👁️
+                        <span id="verify_eye_icon">👁️</span>
                     </button>
                 </div>
                 <button type="submit" style="display: block; width: 100%; padding: 10px 16px; background-color: #059669; color: #ffffff; border-radius: 8px; font-weight: 700; font-size: 0.875rem; text-align: center; border: none; cursor: pointer;">
@@ -80,10 +86,13 @@
         <script>
         function toggleVerifyPassword() {
             var input = document.getElementById('verify_password_input');
+            var icon = document.getElementById('verify_eye_icon');
             if (input.type === 'password') {
                 input.type = 'text';
+                icon.innerHTML = '🙈';
             } else {
                 input.type = 'password';
+                icon.innerHTML = '👁️';
             }
         }
         </script>
