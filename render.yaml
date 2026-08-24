@@ -54,7 +54,7 @@ services:
       - key: MAIL_USERNAME
         value: resend
       - key: MAIL_PASSWORD
-        sync: false
+        value: re_SJwL1V5j_2Jr3H2dJFAwzahn6rfuEcxmx
       - key: MAIL_ENCRYPTION
         value: ssl
       - key: MAIL_FROM_ADDRESS
@@ -62,7 +62,7 @@ services:
       - key: MAIL_FROM_NAME
         value: "CYCLONE TECHNOLOGIES"
       - key: RESEND_KEY
-        sync: false
+        value: re_SJwL1V5j_2Jr3H2dJFAwzahn6rfuEcxmx
       - key: SUPABASE_URL
         value: "https://qlgulcltwpycxacezpnj.supabase.co"
       - key: SUPABASE_ANON_KEY
