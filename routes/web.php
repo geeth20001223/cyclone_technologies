@@ -20,7 +20,7 @@ use App\Http\Controllers\SmsVerificationController;
 
 
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session')])->group(function () {
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     route::get('/dashboard', [HomeController::class, 'Home'])->name('dashboard');
 });
 
@@ -52,7 +52,7 @@ Route::get('/search-user', [AdminController::class, 'SearchUser']);
 /* User routes */
 
 route::get('/', [HomeController::class, 'index']);
-route::get('/home', [HomeController::class, 'Home'])->name('home')->middleware('auth');
+route::get('/home', [HomeController::class, 'Home'])->name('home')->middleware('auth','verified');
 route::get('/my-account', [HomeController::class, 'UserAccount'])->name('user.account');
 Route::post('/user/add-product', [HomeController::class, 'userAddProduct'])->name('user.add_product');
 Route::get('/user/delete-product/{id}', [HomeController::class, 'userDeleteProduct'])->name('user.delete_product');
@@ -107,5 +107,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/messages/start/{productId}', [MessageController::class, 'startChat'])->name('messages.start');
     Route::post('/user/update-profile', [HomeController::class, 'updateProfile'])->name('user.update_profile');
     Route::post('/user/delete-account', [HomeController::class, 'deleteOwnAccount'])->name('user.delete_account');
+    Route::post('/verify-password', [SmsVerificationController::class, 'verifyPasswordAccount'])->name('verify.password');
     Route::post('/seller/review', [HomeController::class, 'storeSellerReview'])->name('seller.review');
 });

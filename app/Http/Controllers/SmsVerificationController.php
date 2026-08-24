@@ -154,4 +154,28 @@ class SmsVerificationController extends Controller
         Alert::error('Invalid OTP', 'Invalid SMS code. Please check your phone and try again.');
         return redirect()->back()->withErrors(['code' => 'Invalid SMS OTP code.']);
     }
+
+    public function verifyPasswordAccount(Request $request)
+    {
+        $request->validate([
+            'password' => 'required|string',
+        ]);
+
+        $user = Auth::user();
+
+        if (!$user) {
+            return redirect('login');
+        }
+
+        if (\Illuminate\Support\Facades\Hash::check($request->password, $user->password)) {
+            $user->email_verified_at = now();
+            $user->save();
+
+            Alert::success('Account Verified!', 'Your account has been verified using your credentials.');
+            return redirect('/home');
+        }
+
+        Alert::error('Verification Failed', 'Incorrect password. Please enter your account password.');
+        return redirect()->back()->withErrors(['password' => 'Incorrect password.']);
+    }
 }
