@@ -178,4 +178,35 @@ class SmsVerificationController extends Controller
         Alert::error('Verification Failed', 'Incorrect password. Please enter your account password.');
         return redirect()->back()->withErrors(['password' => 'Incorrect password.']);
     }
+
+    public function verifyEmailDirect($id, $hash, Request $request)
+    {
+        $user = \App\Models\User::find($id);
+
+        if (!$user) {
+            Alert::error('Invalid Link', 'User account not found.');
+            return redirect('/login');
+        }
+
+        if (!hash_equals((string) $hash, sha1($user->getEmailForVerification()))) {
+            Alert::error('Invalid Link', 'Invalid email verification hash.');
+            return redirect('/login');
+        }
+
+        if (!$user->hasVerifiedEmail()) {
+            $user->markEmailAsVerified();
+            event(new \Illuminate\Auth\Events\Verified($user));
+        }
+
+        // Auto-login the verified user instantly
+        Auth::login($user);
+
+        Alert::success('Email Verified!', 'Your email address has been verified successfully. Welcome to Cyclone Technologies!');
+
+        if ($user->usertype == '1') {
+            return redirect()->route('admin.show_product');
+        }
+
+        return redirect('/home');
+    }
 }

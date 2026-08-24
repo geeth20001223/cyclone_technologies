@@ -88,7 +88,8 @@ Route::get('/cash-order', [HomeController::class, 'CashOrder']);
 Route::get('/stripe/{totalPrice}', [HomeController::class, 'Stripe']);
 Route::post('/stripe/{totalPrice}', [HomeController::class, 'StripePost'])->name('stripe.post');
 
-/* Guest SMS OTP Login Routes */
+/* Guest SMS OTP Login Routes & Direct Email Verification */
+Route::get('/email/verify/{id}/{hash}', [SmsVerificationController::class, 'verifyEmailDirect'])->middleware(['signed'])->name('verification.verify');
 Route::get('/sms-login', [SmsVerificationController::class, 'showSmsLoginForm'])->name('sms.login');
 Route::post('/sms-login/send', [SmsVerificationController::class, 'sendSmsLoginOtp'])->name('sms.login.send');
 Route::get('/sms-login/verify', [SmsVerificationController::class, 'showSmsLoginVerifyForm'])->name('sms.login.verify');
