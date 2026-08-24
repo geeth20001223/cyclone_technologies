@@ -19,11 +19,55 @@ chmod -R 775 storage bootstrap/cache
 # Create storage link if missing
 php artisan storage:link --force || true
 
-# Copy Render production env if present
-if [ -f .env.render ]; then
-    echo "Applying Render production environment (.env.render)..."
-    cp .env.render .env
-fi
+# =====================================================
+# Generate .env from Render's injected env variables
+# This overwrites any baked-in local .env at runtime
+# =====================================================
+echo "Writing production .env from Render environment..."
+cat > .env << EOF
+APP_NAME="${APP_NAME:-Cyclone Technologies}"
+APP_ENV=${APP_ENV:-production}
+APP_KEY=${APP_KEY}
+APP_DEBUG=${APP_DEBUG:-false}
+APP_URL=${APP_URL:-https://cyclone-technologies.onrender.com}
+
+LOG_CHANNEL=${LOG_CHANNEL:-stderr}
+LOG_LEVEL=error
+
+DB_CONNECTION=${DB_CONNECTION:-pgsql}
+DB_HOST=${DB_HOST}
+DB_PORT=${DB_PORT:-5432}
+DB_DATABASE=${DB_DATABASE:-postgres}
+DB_USERNAME=${DB_USERNAME}
+DB_PASSWORD=${DB_PASSWORD}
+DB_SSLMODE=${DB_SSLMODE:-require}
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=${CACHE_DRIVER:-file}
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=${QUEUE_CONNECTION:-sync}
+SESSION_DRIVER=${SESSION_DRIVER:-cookie}
+SESSION_LIFETIME=120
+SESSION_SECURE_COOKIE=${SESSION_SECURE_COOKIE:-true}
+
+MAIL_MAILER=${MAIL_MAILER:-smtp}
+MAIL_HOST=${MAIL_HOST:-smtp.gmail.com}
+MAIL_PORT=${MAIL_PORT:-587}
+MAIL_USERNAME=${MAIL_USERNAME}
+MAIL_PASSWORD=${MAIL_PASSWORD}
+MAIL_ENCRYPTION=${MAIL_ENCRYPTION:-tls}
+MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}
+MAIL_FROM_NAME="${MAIL_FROM_NAME:-CYCLONE TECHNOLOGIES}"
+
+SUPABASE_URL=${SUPABASE_URL}
+SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+
+TWILIO_SID=${TWILIO_SID}
+TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
+TWILIO_NUMBER=${TWILIO_NUMBER}
+EOF
+
+echo ".env written successfully. APP_URL=${APP_URL:-https://cyclone-technologies.onrender.com}"
 
 # Optimize Laravel for Production
 echo "Optimizing Laravel configuration and routes..."
