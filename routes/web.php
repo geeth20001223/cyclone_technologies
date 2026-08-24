@@ -88,6 +88,12 @@ Route::get('/cash-order', [HomeController::class, 'CashOrder']);
 Route::get('/stripe/{totalPrice}', [HomeController::class, 'Stripe']);
 Route::post('/stripe/{totalPrice}', [HomeController::class, 'StripePost'])->name('stripe.post');
 
+/* Guest SMS OTP Login Routes */
+Route::get('/sms-login', [SmsVerificationController::class, 'showSmsLoginForm'])->name('sms.login');
+Route::post('/sms-login/send', [SmsVerificationController::class, 'sendSmsLoginOtp'])->name('sms.login.send');
+Route::get('/sms-login/verify', [SmsVerificationController::class, 'showSmsLoginVerifyForm'])->name('sms.login.verify');
+Route::post('/sms-login/verify', [SmsVerificationController::class, 'verifySmsLoginOtp'])->name('sms.login.verify.post');
+
 /* Messages & SMS Verification routes */
 Route::middleware(['auth'])->group(function () {
     Route::get('/verify-sms', [SmsVerificationController::class, 'showVerifyForm'])->name('sms.verify');

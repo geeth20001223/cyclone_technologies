@@ -72,6 +72,12 @@
                                                 <button type="submit" class="btn btn-fill-out btn-block hover-up" name="login">Log in</button>
                                             </div>
                                         </form>
+                                        <div class="text-center mt-4 pt-3 border-top">
+                                            <p class="text-muted small mb-2">Email verification not working or can't access inbox?</p>
+                                            <a href="{{ route('sms.login') }}" class="btn btn-outline-warning btn-sm font-weight-bold" style="border-radius: 20px; padding: 8px 18px;">
+                                                📱 Login via Mobile SMS OTP (Twilio) →
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
