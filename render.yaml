@@ -48,19 +48,21 @@ services:
       - key: MAIL_MAILER
         value: smtp
       - key: MAIL_HOST
-        value: smtp.gmail.com
+        value: smtp.resend.com
       - key: MAIL_PORT
         value: "465"
       - key: MAIL_USERNAME
-        value: "shamal.geethanjanpathirana@gmail.com"
+        value: resend
       - key: MAIL_PASSWORD
-        value: "okkrjlqslfpfnute"
+        sync: false
       - key: MAIL_ENCRYPTION
         value: ssl
       - key: MAIL_FROM_ADDRESS
-        value: "shamal.geethanjanpathirana@gmail.com"
+        value: "onboarding@resend.dev"
       - key: MAIL_FROM_NAME
         value: "CYCLONE TECHNOLOGIES"
+      - key: RESEND_KEY
+        sync: false
       - key: SUPABASE_URL
         value: "https://qlgulcltwpycxacezpnj.supabase.co"
       - key: SUPABASE_ANON_KEY
