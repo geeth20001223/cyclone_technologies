@@ -24,11 +24,9 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     route::get('/dashboard', [HomeController::class, 'Home'])->name('dashboard');
 });
 
-/* Dev Email Viewer (debug mode only) */
-if (config('app.debug')) {
-    Route::get('/dev/emails', [DevMailController::class, 'index'])->name('dev.emails');
-    Route::post('/dev/emails/clear', [DevMailController::class, 'clear'])->name('dev.emails.clear');
-}
+/* Dev Email Viewer (disabled) */
+// Route::get('/dev/emails', [DevMailController::class, 'index'])->name('dev.emails');
+// Route::post('/dev/emails/clear', [DevMailController::class, 'clear'])->name('dev.emails.clear');
 
 
 /* Admin Routes */
