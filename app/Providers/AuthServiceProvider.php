@@ -24,12 +24,16 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Always use the production Render URL for email links
+        $productionUrl = 'https://cyclone-technologies.onrender.com';
+
         // Custom Email Verification Link & Message
-        VerifyEmail::toMailUsing(function ($notifiable, $url) {
-            $verifyUrl = $url;
-            if (str_starts_with($verifyUrl, 'http://')) {
-                $verifyUrl = 'https://' . substr($verifyUrl, 7);
-            }
+        VerifyEmail::toMailUsing(function ($notifiable, $url) use ($productionUrl) {
+            // Replace entire host+scheme with the production URL
+            $parsed = parse_url($url);
+            $path    = $parsed['path'] ?? '';
+            $query   = isset($parsed['query']) ? '?' . $parsed['query'] : '';
+            $verifyUrl = $productionUrl . $path . $query;
 
             return (new MailMessage)
                 ->subject('Verify Email Address - Cyclone Technologies')
@@ -42,15 +46,10 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         // Custom Password Reset Link & Message
-        ResetPassword::toMailUsing(function ($notifiable, $token) {
-            $resetUrl = url(route('password.reset', [
-                'token' => $token,
-                'email' => $notifiable->getEmailForPasswordReset(),
-            ], false));
-
-            if (str_starts_with($resetUrl, 'http://')) {
-                $resetUrl = 'https://' . substr($resetUrl, 7);
-            }
+        ResetPassword::toMailUsing(function ($notifiable, $token) use ($productionUrl) {
+            $path = '/reset-password/' . $token;
+            $query = '?' . http_build_query(['email' => $notifiable->getEmailForPasswordReset()]);
+            $resetUrl = $productionUrl . $path . $query;
 
             return (new MailMessage)
                 ->subject('Reset Your Password - Cyclone Technologies')
