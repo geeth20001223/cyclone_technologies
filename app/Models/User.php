@@ -61,6 +61,15 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
 
+    public function sendEmailVerificationNotification()
+    {
+        try {
+            parent::sendEmailVerificationNotification();
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::error('Verification email dispatch notice: ' . $e->getMessage());
+        }
+    }
+
     public function products()
     {
         return $this->hasMany(Product::class);

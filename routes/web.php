@@ -20,7 +20,7 @@ use App\Http\Controllers\SmsVerificationController;
 
 
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
+Route::middleware(['auth:sanctum',config('jetstream.auth_session')])->group(function () {
     route::get('/dashboard', [HomeController::class, 'Home'])->name('dashboard');
 });
 
@@ -52,7 +52,7 @@ Route::get('/search-user', [AdminController::class, 'SearchUser']);
 /* User routes */
 
 route::get('/', [HomeController::class, 'index']);
-route::get('/home', [HomeController::class, 'Home'])->name('home')->middleware('auth','verified');
+route::get('/home', [HomeController::class, 'Home'])->name('home')->middleware('auth');
 route::get('/my-account', [HomeController::class, 'UserAccount'])->name('user.account');
 Route::post('/user/add-product', [HomeController::class, 'userAddProduct'])->name('user.add_product');
 Route::get('/user/delete-product/{id}', [HomeController::class, 'userDeleteProduct'])->name('user.delete_product');
