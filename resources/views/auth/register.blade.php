@@ -76,7 +76,7 @@
                                                 <button type="submit" class="btn btn-fill-out btn-block hover-up">Submit &amp; Register</button>
                                             </div>
                                         </form>                                        
-                                        <div class="text-muted text-center">Already have an account? <a href="{{route('login')}}">Sign in now</a></div>
+                                        <div class="text-muted text-center">Already have an account? <a href="{{route('login')}}">Log In Now</a></div>
                                     </div>
                                 </div>
                             </div>                            
