@@ -4,80 +4,80 @@
             
         </x-slot>
 
-        <div class="text-center mb-4">
-            <img src="/user/assets/imgs/logo/app_logo.png" alt="Logo" style="max-width: 320px; margin: 0 auto; display: block;">
-            <h3 class="text-xl font-bold text-gray-800 mt-3">Account Verification Hub</h3>
-            <p class="text-sm text-gray-600 mt-1">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="/user/assets/imgs/logo/app_logo.png" alt="Logo" style="max-width: 260px; margin: 0 auto 12px auto; display: block;">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #1e293b; margin: 0 0 6px 0;">Account Verification Hub</h3>
+            <p style="font-size: 0.875rem; color: #64748b; margin: 0; line-height: 1.4;">
                 Choose your preferred verification method below to activate your account and enter Cyclone Technologies:
             </p>
         </div>
 
         @if (session('status') == 'verification-link-sent')
-            <div class="mb-4 p-3 bg-green-50 border border-green-200 text-green-700 rounded-lg text-sm text-center font-medium">
+            <div style="margin-bottom: 16px; padding: 12px; background-color: #ecfdf5; border: 1px solid #a7f3d0; color: #047857; border-radius: 8px; font-size: 0.85rem; text-align: center; font-weight: 600;">
                 ✉️ A fresh verification email link has been sent to your email address!
             </div>
         @endif
 
-        <x-validation-errors class="mb-4 text-red-600 text-sm"/>
+        <x-validation-errors class="mb-4" style="color: #dc2626; font-size: 0.85rem;"/>
 
         <!-- METHOD 1: EMAIL VERIFICATION -->
-        <div class="mb-4 p-4 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow transition">
-            <div class="flex items-center mb-2">
-                <span class="text-2xl mr-2">✉️</span>
+        <div style="margin-bottom: 16px; padding: 16px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <span style="font-size: 1.5rem; margin-right: 10px;">✉️</span>
                 <div>
-                    <h4 class="font-bold text-gray-800 text-base">Method 1: Email Verification Link</h4>
-                    <p class="text-xs text-gray-500">Check your inbox for the link we sent, or resend below.</p>
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: #1e293b; margin: 0;">Method 1: Email Verification Link</h4>
+                    <p style="font-size: 0.8rem; color: #64748b; margin: 2px 0 0 0;">Check your inbox for the link we sent, or resend below.</p>
                 </div>
             </div>
-            <form method="POST" action="{{ route('verification.send') }}" class="mt-3">
+            <form method="POST" action="{{ route('verification.send') }}" style="margin-top: 12px;">
                 @csrf
-                <button type="submit" class="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-lg shadow transition flex items-center justify-center">
+                <button type="submit" style="display: block; width: 100%; padding: 10px 16px; background-color: #2563eb; color: #ffffff; border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-align: center; border: none; cursor: pointer;">
                     Resend Verification Email
                 </button>
             </form>
         </div>
 
         <!-- METHOD 2: MOBILE SMS OTP (TWILIO) -->
-        <div class="mb-4 p-4 bg-amber-50 border border-amber-200 rounded-xl shadow-sm hover:shadow transition">
-            <div class="flex items-center mb-2">
-                <span class="text-2xl mr-2">📱</span>
+        <div style="margin-bottom: 16px; padding: 16px; background-color: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <span style="font-size: 1.5rem; margin-right: 10px;">📱</span>
                 <div>
-                    <h4 class="font-bold text-amber-900 text-base">Method 2: Mobile SMS OTP Code</h4>
-                    <p class="text-xs text-amber-700">Receive a 6-digit SMS code on your phone via Twilio.</p>
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: #78350f; margin: 0;">Method 2: Mobile SMS OTP Code</h4>
+                    <p style="font-size: 0.8rem; color: #92400e; margin: 2px 0 0 0;">Receive a 6-digit SMS code on your phone via Twilio.</p>
                 </div>
             </div>
-            <div class="mt-3">
-                <a href="{{ route('sms.verify') }}" class="w-full py-2 px-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-sm rounded-lg shadow transition flex items-center justify-center text-center">
+            <div style="margin-top: 12px;">
+                <a href="{{ route('sms.verify') }}" style="display: block; width: 100%; padding: 10px 16px; background: linear-gradient(135deg, #d97706, #ea580c); color: #ffffff; border-radius: 8px; font-weight: 700; font-size: 0.875rem; text-align: center; text-decoration: none; border: none; box-sizing: border-box;">
                     Verify via Mobile SMS (Twilio OTP) →
                 </a>
             </div>
         </div>
 
         <!-- METHOD 3: ACCOUNT PASSWORD CREDENTIALS -->
-        <div class="mb-4 p-4 bg-emerald-50 border border-emerald-200 rounded-xl shadow-sm hover:shadow transition">
-            <div class="flex items-center mb-2">
-                <span class="text-2xl mr-2">🔑</span>
+        <div style="margin-bottom: 16px; padding: 16px; background-color: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <span style="font-size: 1.5rem; margin-right: 10px;">🔑</span>
                 <div>
-                    <h4 class="font-bold text-emerald-900 text-base">Method 3: Confirm Password Credentials</h4>
-                    <p class="text-xs text-emerald-700">Enter your account password below to verify instantly.</p>
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: #065f46; margin: 0;">Method 3: Confirm Password Credentials</h4>
+                    <p style="font-size: 0.8rem; color: #047857; margin: 2px 0 0 0;">Enter your account password below to verify instantly.</p>
                 </div>
             </div>
-            <form method="POST" action="{{ route('verify.password') }}" class="mt-3">
+            <form method="POST" action="{{ route('verify.password') }}" style="margin-top: 12px;">
                 @csrf
-                <div class="mb-3">
+                <div style="margin-bottom: 10px;">
                     <input type="password" name="password" required placeholder="Enter Your Account Password" 
-                           class="w-full px-3 py-2 border border-emerald-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none text-gray-800">
+                           style="display: block; width: 100%; padding: 10px 14px; border: 1.5px solid #a7f3d0; border-radius: 8px; font-size: 0.875rem; color: #1e293b; background-color: #ffffff; box-sizing: border-radius;">
                 </div>
-                <button type="submit" class="w-full py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-lg shadow transition">
+                <button type="submit" style="display: block; width: 100%; padding: 10px 16px; background-color: #059669; color: #ffffff; border-radius: 8px; font-weight: 700; font-size: 0.875rem; text-align: center; border: none; cursor: pointer;">
                     Verify &amp; Enter System Immediately →
                 </button>
             </form>
         </div>
 
-        <div class="mt-4 text-center border-t pt-3">
-            <form method="POST" action="{{ route('logout') }}" class="inline">
+        <div style="margin-top: 20px; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 12px;">
+            <form method="POST" action="{{ route('logout') }}" style="display: inline;">
                 @csrf
-                <button type="submit" class="text-xs text-gray-500 hover:text-gray-800 underline">
+                <button type="submit" style="background: none; border: none; color: #64748b; font-size: 0.8rem; text-decoration: underline; cursor: pointer;">
                     Log Out of Account
                 </button>
             </form>
