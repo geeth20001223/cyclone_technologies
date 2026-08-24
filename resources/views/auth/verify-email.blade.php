@@ -14,16 +14,6 @@
             </div>
         @endif
 
-        @if(config('app.debug'))
-        <div style="background:#1e3a8a;border:1px solid #3b82f6;border-radius:8px;padding:12px 16px;margin-bottom:16px;">
-            <p style="color:#93c5fd;font-size:0.82rem;margin-bottom:8px;">⚡ <strong>Dev Mode:</strong> Email is saved to the log. Click below to view and open your verification link:</p>
-            <a href="{{ route('dev.emails') }}" target="_blank"
-               style="display:inline-block;background:#2563eb;color:white;padding:7px 14px;border-radius:6px;font-size:0.82rem;text-decoration:none;">
-                📬 Open Dev Email Viewer
-            </a>
-        </div>
-        @endif
-
         <div class="mt-4 flex items-center justify-between">
             <form method="POST" action="{{ route('verification.send') }}">
                 @csrf
