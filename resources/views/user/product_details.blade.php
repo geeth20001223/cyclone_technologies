@@ -155,91 +155,111 @@
                                 <div class="tab-style3">
                                     <ul class="nav nav-tabs text-uppercase">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info">Product Details</a>
+                                            <a class="nav-link active" id="Description-tab" data-bs-toggle="tab" href="#Description">Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info">Specifications</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content shop_info_tab entry-main-content">
-                                        <div class="tab-pane fade show active" id="Additional-info">
+                                        <div class="tab-pane fade show active" id="Description">
+                                            <div class="product-description p-3">
+                                                <p style="font-size: 15px; line-height: 1.7; color: #444;">{{ $product->description }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="Additional-info">
                                             <table class="font-md">
                                                 <tbody>
+                                                    @if(!empty($product->screen_size) && $product->screen_size !== 'N/A')
                                                     <tr>
                                                         <th>Screen Size</th>
-                                                        <td>
-                                                            <p>{{$product->screen_size}}</p>
-                                                        </td>
+                                                        <td><p>{{$product->screen_size}}</p></td>
                                                     </tr>
-                                                    <tr>
-                                                        <th>Graphics Card</th>
-                                                        <td>
-                                                            <p>{{$product->graphics_type}}</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Graphics Card Memory</th>
-                                                        <td>
-                                                            <p>{{$product->graphics_card_memory}}</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Processor Generation</th>
-                                                        <td>
-                                                            <p>{{$product->processor_generation}} Generation</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Processor Type</th>
-                                                        <td>
-                                                            <p>{{$product->processor_type}}</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Processor</th>
-                                                        <td>
-                                                            <p>{{$product->processor}}</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                         <th>Operating System</th>
-                                                         <td>
-                                                             <p>{{$product->operating_system}}</p>
-                                                         </td>
-                                                     </tr>
-                                                    <tr>
-                                                        <th>Keyboard</th>
-                                                        <td>
-                                                            <p>{{$product->keyboard}}</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Processor Speed</th>
-                                                        <td>
-                                                            <p>{{$product->processor_speed}}</p>
-                                                        </td>
-                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->screen_resolution) && $product->screen_resolution !== 'N/A')
                                                     <tr>
                                                         <th>Screen Resolution</th>
-                                                        <td>
-                                                            <p>{{$product->screen_resolution}}</p>
-                                                        </td>
+                                                        <td><p>{{$product->screen_resolution}}</p></td>
                                                     </tr>
+                                                    @endif
+                                                    @if(!empty($product->screen_refresh_rate) && $product->screen_refresh_rate !== 'N/A')
                                                     <tr>
-                                                        <th>RAM(System Memory)</th>
-                                                        <td>
-                                                            <p>{{$product->ram}}</p>
-                                                        </td>
+                                                        <th>Refresh Rate</th>
+                                                        <td><p>{{$product->screen_refresh_rate}}</p></td>
                                                     </tr>
+                                                    @endif
+                                                    @if(!empty($product->processor) && $product->processor !== 'N/A')
+                                                    <tr>
+                                                        <th>Processor</th>
+                                                        <td><p>{{$product->processor}}</p></td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->processor_type) && $product->processor_type !== 'N/A')
+                                                    <tr>
+                                                        <th>Processor Type</th>
+                                                        <td><p>{{$product->processor_type}}</p></td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->processor_generation) && $product->processor_generation !== 'N/A')
+                                                    <tr>
+                                                        <th>Processor Generation / Architecture</th>
+                                                        <td><p>{{$product->processor_generation}}</p></td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->processor_speed) && $product->processor_speed !== 'N/A')
+                                                    <tr>
+                                                        <th>Processor / Performance Speed</th>
+                                                        <td><p>{{$product->processor_speed}}</p></td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->graphics_type) && $product->graphics_type !== 'N/A')
+                                                    <tr>
+                                                        <th>Graphics Card</th>
+                                                        <td><p>{{$product->graphics_type}}</p></td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->graphics_card_memory) && $product->graphics_card_memory !== 'N/A')
+                                                    <tr>
+                                                        <th>Graphics Memory</th>
+                                                        <td><p>{{$product->graphics_card_memory}}</p></td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->ram) && $product->ram !== 'N/A')
+                                                    <tr>
+                                                        <th>RAM (System Memory)</th>
+                                                        <td><p>{{$product->ram}}</p></td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->ssd_capacity) && $product->ssd_capacity !== 'N/A')
+                                                    <tr>
+                                                        <th>Storage / Capacity</th>
+                                                        <td><p>{{$product->ssd_capacity}}</p></td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->operating_system) && $product->operating_system !== 'N/A')
+                                                    <tr>
+                                                        <th>Operating System / Platform</th>
+                                                        <td><p>{{$product->operating_system}}</p></td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->keyboard) && $product->keyboard !== 'N/A')
+                                                    <tr>
+                                                        <th>Keyboard / Controls</th>
+                                                        <td><p>{{$product->keyboard}}</p></td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->color) && $product->color !== 'N/A')
                                                     <tr>
                                                         <th>Color</th>
-                                                        <td>
-                                                            <p>{{$product->color}}</p>
-                                                        </td>
+                                                        <td><p>{{$product->color}}</p></td>
                                                     </tr>
+                                                    @endif
+                                                    @if(!empty($product->device_weight) && $product->device_weight !== 'N/A')
                                                     <tr>
-                                                        <th>SSD Capacity</th>
-                                                        <td>
-                                                            <p>{{$product->ssd_capacity}}</p>
-                                                        </td>
+                                                        <th>Device Weight</th>
+                                                        <td><p>{{$product->device_weight}}</p></td>
                                                     </tr>
+                                                    @endif
                                                 </tbody>
                                             </table>
                                         </div>
@@ -252,10 +272,21 @@
                         <div class="widget-category mb-30">
                             <h5 class="section-title style-1 mb-30 wow fadeIn animated">{{$product->category}}</h5>
                             <ul class="categories">
-                                <li><span style="font-weight:bold">Processor: </span> {{ $product->processor_type == $product->processor ? $product->processor : (trim($product->processor_type . ' ' . $product->processor)) }}</li>
-                                <li><span style="font-weight:bold">Operating System: </span>{{$product->operating_system}}</li>
+                                @if(!empty($product->processor) && $product->processor !== 'N/A')
+                                <li><span style="font-weight:bold">Processor: </span> {{ $product->processor }}</li>
+                                @endif
+                                @if(!empty($product->operating_system) && $product->operating_system !== 'N/A')
+                                <li><span style="font-weight:bold">OS / Platform: </span>{{$product->operating_system}}</li>
+                                @endif
+                                @if(!empty($product->ram) && $product->ram !== 'N/A')
                                 <li><span style="font-weight:bold">RAM: </span>{{$product->ram}}</li>
-                                <li><span style="font-weight:bold">SSD Capacity: </span>{{$product->ssd_capacity}}</li>
+                                @endif
+                                @if(!empty($product->ssd_capacity) && $product->ssd_capacity !== 'N/A')
+                                <li><span style="font-weight:bold">Storage: </span>{{$product->ssd_capacity}}</li>
+                                @endif
+                                @if(!empty($product->color) && $product->color !== 'N/A')
+                                <li><span style="font-weight:bold">Color: </span>{{$product->color}}</li>
+                                @endif
                             </ul>
                         </div>                        
                     </div>
